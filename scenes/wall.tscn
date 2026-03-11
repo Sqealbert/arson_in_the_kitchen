@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bliigqlc62481"]
+
+[ext_resource type="Shader" uid="uid://beg5eas6mo72w" path="res://shaders/wall.gdshader" id="1_2ktk7"]
+[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="1_wykyb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e00m8"]
+shader = ExtResource("1_2ktk7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wykyb"]
+size = Vector2(126, 127)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e00m8")
+texture = ExtResource("1_wykyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wykyb")
