@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://disorvkpd4otd"]
+
+[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="1_nhlaj"]
+[ext_resource type="Script" uid="uid://c8egu0eog74e" path="res://scenes/moving_wall.gd" id="1_s1tef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhlaj"]
+
+[node name="MovingWall" type="StaticBody2D" groups=["moving"]]
+collision_layer = 17
+script = ExtResource("1_s1tef")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["moving"]]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_nhlaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nhlaj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(20, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-19, 0)

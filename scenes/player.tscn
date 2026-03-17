@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://mw5lpyf6ek3m"]
+[gd_scene load_steps=5 format=3 uid="uid://mw5lpyf6ek3m"]
 
 [ext_resource type="Texture2D" uid="uid://84msa5uauhad" path="res://grapics/sweet_baby.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bmv20qedbkcns" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://cxrrqqtis86ia" path="res://scenes/stapler_projectile.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 26.0
@@ -23,3 +24,11 @@ position = Vector2(5, 14)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Stapler_shots" type="Node" parent="."]
+
+[node name="StaplerProjectile" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+
+[node name="StaplerProjectile2" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+
+[node name="StaplerProjectile3" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
