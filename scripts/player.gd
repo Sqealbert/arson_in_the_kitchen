@@ -31,3 +31,6 @@ func _physics_process(_delta: float) -> void:
 		next_stapler_index += 1
 		if next_stapler_index >= len($Stapler_shots.get_children()):
 			next_stapler_index = 0
+	
+func fall():
+	print("aaaaaa")

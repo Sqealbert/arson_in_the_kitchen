@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://b75w4am2r6slf"]
+[gd_scene load_steps=6 format=4 uid="uid://b75w4am2r6slf"]
 
 [ext_resource type="TileSet" uid="uid://2v0rf0o351o5" path="res://grapics/temporrary_set.tres" id="1_bt28o"]
 [ext_resource type="PackedScene" uid="uid://mw5lpyf6ek3m" path="res://scenes/player.tscn" id="2_bt28o"]
 [ext_resource type="PackedScene" uid="uid://disorvkpd4otd" path="res://scenes/moving_wall.tscn" id="2_f27ey"]
 [ext_resource type="PackedScene" uid="uid://g4b7ixqp6y45" path="res://scenes/block.tscn" id="4_dylph"]
+[ext_resource type="PackedScene" uid="uid://d23wayk66jsbj" path="res://scenes/void_zone.tscn" id="5_aoiq2"]
 
 [node name="Level4" type="Node2D"]
 
@@ -48,6 +49,10 @@ position = Vector2(648, 527)
 
 [node name="Block" parent="." instance=ExtResource("4_dylph")]
 position = Vector2(728, 266)
+
+[node name="VoidZone" parent="." instance=ExtResource("5_aoiq2")]
+position = Vector2(629.00006, -285)
+scale = Vector2(8.045444, -33.46367)
 
 [editable path="MovingWall"]
 [editable path="MovingWall2"]
