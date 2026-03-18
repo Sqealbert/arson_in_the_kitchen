@@ -1,22 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxrrqqtis86ia"]
 
 [ext_resource type="Script" uid="uid://bwsc3e33nakti" path="res://scripts/stapler_projectile.gd" id="1_6ts5u"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="1_60pgg"]
+[ext_resource type="Texture2D" uid="uid://bctvomx35i01l" path="res://grapics/staplerThing.png" id="2_6ts5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60pgg"]
-size = Vector2(38, 38)
+size = Vector2(26.419823, 34.364395)
 
 [node name="StaplerProjectile" type="Area2D"]
-visible = false
+rotation = 1.5707964
 collision_layer = 0
 collision_mask = 17
 script = ExtResource("1_6ts5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_60pgg")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6ts5u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.537523, 1.499999)
+scale = Vector2(0.9434187, 1.5422941)
 shape = SubResource("RectangleShape2D_60pgg")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -10,11 +10,13 @@ var shot_bodies: Array
 func shoot() -> void:
 	visible = true
 	position = get_parent().get_parent().position 
-	dir = get_parent().get_parent().lasting_dir # only for player
+	dir = get_parent().get_parent().lasting_dir # only from player
+	look_at(position - dir)	 # chancge rotation
 	moving = true
 	if shot_bodies:
 		for bod in shot_bodies:
 			bod.move()
+		shot_bodies = []
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
