@@ -10,6 +10,7 @@ shader = ExtResource("1_2ktk7")
 size = Vector2(126, 127)
 
 [node name="Wall" type="StaticBody2D"]
+collision_mask = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_e00m8")
