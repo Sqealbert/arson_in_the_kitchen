@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1g2lmkbiikgb"]
+
+[ext_resource type="Script" uid="uid://bqmu4i6wfmpyv" path="res://scenes/door.gd" id="1_83dcw"]
+[ext_resource type="Shader" uid="uid://beg5eas6mo72w" path="res://shaders/wall.gdshader" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="2_83dcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la1wf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18pbm"]
+shader = ExtResource("1_uvdjg")
+
+[node name="door" type="StaticBody2D"]
+script = ExtResource("1_83dcw")
+signals_needed = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.3599987, 1)
+shape = SubResource("RectangleShape2D_la1wf")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+material = SubResource("ShaderMaterial_18pbm")
+scale = Vector2(0.15723273, 0.15999989)
+texture = ExtResource("2_83dcw")
