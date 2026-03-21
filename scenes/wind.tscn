@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2hwean7i4aif"]
+
+[ext_resource type="Script" uid="uid://dd6h3t6q70voq" path="res://scripts/wind.gd" id="1_wx8gj"]
+
+[sub_resource type="Curve" id="Curve_iwlsb"]
+_limits = [0.0, 9.83, 0.0, 1.0]
+_data = [Vector2(0.5636364, 0.22301197), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_p3bod"]
+resource_local_to_scene = true
+_limits = [0.0, 14.53141, 0.0, 1.0]
+_data = [Vector2(0.56136364, 14.53141), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsuhd"]
+size = Vector2(20, 65)
+
+[node name="wind" type="Node2D"]
+script = ExtResource("1_wx8gj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+rotation = 1.5707964
+amount = 6
+lifetime = 0.45
+emission_shape = 3
+emission_rect_extents = Vector2(9.94, 1)
+particle_flag_align_y = true
+direction = Vector2(0, -10)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 133.74
+initial_velocity_max = 259.64
+scale_amount_min = 2.0
+scale_amount_max = 6.0
+split_scale = true
+scale_curve_x = SubResource("Curve_iwlsb")
+scale_curve_y = SubResource("Curve_p3bod")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.61994267, 1.9848667)
+collision_layer = 0
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -33)
+shape = SubResource("RectangleShape2D_jsuhd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
