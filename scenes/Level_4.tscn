@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b75w4am2r6slf"]
+[gd_scene load_steps=12 format=4 uid="uid://b75w4am2r6slf"]
 
 [ext_resource type="TileSet" uid="uid://2v0rf0o351o5" path="res://grapics/temporrary_set.tres" id="1_bt28o"]
 [ext_resource type="PackedScene" uid="uid://mw5lpyf6ek3m" path="res://scenes/player.tscn" id="2_bt28o"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b1fm2ggsxmab5" path="res://scenes/movable_fan.tscn" id="7_613hc"]
 [ext_resource type="PackedScene" uid="uid://d1g2lmkbiikgb" path="res://scenes/door.tscn" id="8_1wcwq"]
 [ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://scenes/button_floor_block.tscn" id="9_qh3ky"]
+[ext_resource type="PackedScene" uid="uid://d0h0e8of1k5xc" path="res://scenes/button_floor_player.tscn" id="10_pnomx"]
+[ext_resource type="PackedScene" uid="uid://bm71brrm4tl4" path="res://scenes/button_wall_block.tscn" id="11_bm0eo"]
 
 [node name="Level4" type="Node2D"]
 
@@ -49,9 +51,19 @@ rotation = 1.5707964
 
 [node name="door" parent="." instance=ExtResource("8_1wcwq")]
 position = Vector2(845, -911)
+signals_needed = 2
 
 [node name="button_floor_block" parent="door" node_paths=PackedStringArray("signal_reciver") instance=ExtResource("9_qh3ky")]
 position = Vector2(161, 229)
 signal_reciver = NodePath("..")
+
+[node name="button_floor_player" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("10_pnomx")]
+position = Vector2(664, -682)
+signal_reciver = NodePath("../door")
+
+[node name="button_wall_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("11_bm0eo")]
+position = Vector2(573, -415.00003)
+rotation = -1.5707964
+signal_reciver = NodePath("../door")
 
 [editable path="MovingWall2"]

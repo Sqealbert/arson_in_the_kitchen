@@ -1,18 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://7hn184fh68ts"]
+[gd_scene load_steps=6 format=3 uid="uid://d0h0e8of1k5xc"]
 
-[ext_resource type="Shader" uid="uid://cj6pxnsdnjgk6" path="res://shaders/red.gdshader" id="1_eb6h5"]
-[ext_resource type="Script" uid="uid://sd2x333js4h7" path="res://scripts/button_floor_block.gd" id="1_m51aq"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="2_m51aq"]
+[ext_resource type="Script" uid="uid://c85853d6drddg" path="res://scripts/button_floor_player.gd" id="1_hjbpa"]
+[ext_resource type="Shader" uid="uid://beg5eas6mo72w" path="res://shaders/wall.gdshader" id="2_hjbpa"]
+[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="3_ul2bd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6h5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rha75"]
-shader = ExtResource("1_eb6h5")
+shader = ExtResource("2_hjbpa")
 
-[node name="button_floor_block" type="Area2D"]
+[node name="button_floor_player" type="Area2D"]
 collision_layer = 0
-collision_mask = 4
-script = ExtResource("1_m51aq")
+collision_mask = 2
+script = ExtResource("1_hjbpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6.453276, 6.457145)
@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_eb6h5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_rha75")
-texture = ExtResource("2_m51aq")
+texture = ExtResource("3_ul2bd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

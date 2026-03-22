@@ -9,12 +9,11 @@ func open_signal():
 	
 func close_signal():
 	signals_needed += 1
-	close()
 	
 func open():
-	$CollisionShape2D.disabled = true
+	process_mode = Node.PROCESS_MODE_DISABLED
 	$CollisionShape2D/Sprite2D.visible = false
 	
 func close():
-	$CollisionShape2D.disabled = false
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	$CollisionShape2D/Sprite2D.visible = true
