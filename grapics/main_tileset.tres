@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cuwn43hg8itwp"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cuwn43hg8itwp"]
 
 [ext_resource type="Texture2D" uid="uid://5apw2wsw7k6b" path="res://grapics/tileset.png" id="1_fylvm"]
+[ext_resource type="PackedScene" uid="uid://d1tdvfvwqeg60" path="res://scenes/vines.tscn" id="2_qxhw0"]
+[ext_resource type="PackedScene" uid="uid://d23wayk66jsbj" path="res://scenes/void_zone.tscn" id="3_fp6tp"]
+[ext_resource type="PackedScene" uid="uid://g4b7ixqp6y45" path="res://scenes/block.tscn" id="4_drstl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxhw0"]
 texture = ExtResource("1_fylvm")
@@ -80,8 +83,19 @@ texture_region_size = Vector2i(245, 245)
 7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-122.5, 54.171707, -122.5, -122.5, 122.5, -122.5, 122.5, 52.707596)
 8:5/0 = 0
 8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(27, 55, -122.5, 55, -122.5, -122.5, 26, -122.5)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-122.5, -122.5, 122.5, -122.5, 122.5, 122.5, -122.5, 122.5)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fylvm"]
+scenes/1/scene = ExtResource("2_qxhw0")
+scenes/2/scene = ExtResource("3_fp6tp")
+scenes/4/scene = ExtResource("4_drstl")
 
 [resource]
 tile_size = Vector2i(245, 245)
 physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_qxhw0")
+sources/1 = SubResource("TileSetScenesCollectionSource_fylvm")

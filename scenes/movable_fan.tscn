@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1fm2ggsxmab5"]
+[gd_scene load_steps=4 format=3 uid="uid://b1fm2ggsxmab5"]
 
 [ext_resource type="PackedScene" uid="uid://b2hwean7i4aif" path="res://scenes/wind.tscn" id="1_e03bt"]
 [ext_resource type="PackedScene" uid="uid://g4b7ixqp6y45" path="res://scenes/block.tscn" id="2_nvcqm"]
-[ext_resource type="Shader" uid="uid://beg5eas6mo72w" path="res://shaders/wall.gdshader" id="3_8d3jl"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="4_tbpao"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7p0f"]
-shader = ExtResource("3_8d3jl")
+[ext_resource type="Texture2D" uid="uid://daw7hctm5rokc" path="res://grapics/fan.png" id="3_nvcqm"]
 
 [node name="movable_fan" type="Node2D"]
 
@@ -15,12 +11,12 @@ z_index = 1
 
 [node name="wind" parent="Block" instance=ExtResource("1_e03bt")]
 z_index = -1
-position = Vector2(0, -64)
+position = Vector2(5.9999995, -179)
 rotation = -1.5707964
-scale = Vector2(4.0909286, -7.301763)
+scale = Vector2(10.650929, -11.30176)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Block"]
-material = SubResource("ShaderMaterial_f7p0f")
-position = Vector2(0, -65)
-scale = Vector2(-0.8196071, 0.13963589)
-texture = ExtResource("4_tbpao")
+z_index = -1
+position = Vector2(23, -115)
+rotation = -1.5707964
+texture = ExtResource("3_nvcqm")

@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://mw5lpyf6ek3m"]
+[gd_scene load_steps=7 format=3 uid="uid://mw5lpyf6ek3m"]
 
 [ext_resource type="Texture2D" uid="uid://84msa5uauhad" path="res://grapics/sweet_baby.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bmv20qedbkcns" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://b2hwean7i4aif" path="res://scenes/wind.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://cxrrqqtis86ia" path="res://scenes/stapler_projectile.tscn" id="3_qhqgy"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 47.042534
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 26.0
-height = 140.0
+radius = 90.00001
+height = 402.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -15,15 +19,35 @@ collision_mask = 7
 script = ExtResource("1_g2els")
 speed = 800
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_3vyb7")
+[node name="wind_pivot" type="Marker2D" parent="."]
+scale = Vector2(5.895506, 9.03451)
+
+[node name="wind" parent="wind_pivot" instance=ExtResource("3_dqkch")]
+position = Vector2(35.789974, -1.0208748e-06)
+scale = Vector2(1, 0.99999994)
+active = false
+
+[node name="flame_pivot" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="flame_pivot"]
+position = Vector2(264, 0)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flame_pivot/Area2D"]
+shape = SubResource("CircleShape2D_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 14)
+position = Vector2(4.9999995, 13.999999)
+scale = Vector2(0.9999999, 1)
 shape = SubResource("CapsuleShape2D_g2els")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.49999997, 0.5)
+texture = ExtResource("1_3vyb7")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.34, 0.34)
 
 [node name="Stapler_shots" type="Node" parent="."]
 
@@ -32,3 +56,8 @@ shape = SubResource("CapsuleShape2D_g2els")
 [node name="StaplerProjectile2" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
 
 [node name="StaplerProjectile3" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

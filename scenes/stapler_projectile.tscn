@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bctvomx35i01l" path="res://grapics/staplerThing.png" id="2_6ts5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60pgg"]
-size = Vector2(26.419823, 34.364395)
+size = Vector2(39.219067, 77.15778)
 
 [node name="StaplerProjectile" type="Area2D"]
 rotation = 1.5707964
@@ -13,11 +13,11 @@ collision_mask = 17
 script = ExtResource("1_6ts5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_6ts5u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.537523, 1.499999)
+position = Vector2(-2.4999998, 5.5)
 scale = Vector2(0.9434187, 1.5422941)
 shape = SubResource("RectangleShape2D_60pgg")
 

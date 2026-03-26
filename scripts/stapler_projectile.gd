@@ -2,7 +2,7 @@ extends Area2D
 
 
 var dir:Vector2
-var speed: int = 600
+var speed: int = 1200
 var moving = false
 var shot_bodies: Array
 
