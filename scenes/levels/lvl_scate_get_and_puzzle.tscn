@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqxk4pqaowqn3"]
+
+[ext_resource type="PackedScene" uid="uid://bb8u25430albj" path="res://scenes/level_transition.tscn" id="1_v3mb1"]
+
+[node name="LvlScateGetAndPuzzle" type="Node2D"]
+
+[node name="transitions" type="Node" parent="."]
+
+[node name="Level_transition" parent="transitions" instance=ExtResource("1_v3mb1")]
+position = Vector2(344, -4)
+next_level = "res://scenes/levels/lvl_lighter_fan.tscn"
+spawn_id = 1
+send_id = 3
+
+[node name="Level_transition2" parent="transitions" instance=ExtResource("1_v3mb1")]
+position = Vector2(887, -9)
+next_level = "res://scenes/levels/lvl_stapler_get.tscn"
+spawn_id = 2
+send_id = 1

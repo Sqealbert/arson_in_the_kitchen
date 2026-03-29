@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://30ihgcdt8fbw"
-path="res://.godot/imported/IMG_1302.png-057dedd3fc062a4d56787b441cae9d74.ctex"
+uid="uid://biqmgequhjaj6"
+path="res://.godot/imported/Skate.png-c19881b7c97cb961ba8c70e6842c5142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grapics/IMG_1302.png"
-dest_files=["res://.godot/imported/IMG_1302.png-057dedd3fc062a4d56787b441cae9d74.ctex"]
+source_file="res://grapics/Skate.png"
+dest_files=["res://.godot/imported/Skate.png-c19881b7c97cb961ba8c70e6842c5142.ctex"]
 
 [params]
 

@@ -11,9 +11,9 @@ func close_signal():
 	signals_needed += 1
 	
 func open():
-	process_mode = Node.PROCESS_MODE_DISABLED
-	$CollisionShape2D/Sprite2D.visible = false
+	$anim.play('default')
+	$AudioStreamPlayer2D.play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func close():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	$CollisionShape2D/Sprite2D.visible = true

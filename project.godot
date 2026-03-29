@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Arson in the kitchen"
-run/main_scene="uid://b75w4am2r6slf"
+run/main_scene="uid://cjyws66mj6dmg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
 
 [global_group]
 

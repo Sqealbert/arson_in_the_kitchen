@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=4 uid="uid://c87jd8yl3ysck"]
+
+[ext_resource type="TileSet" uid="uid://cuwn43hg8itwp" path="res://grapics/main_tileset.tres" id="1_b5x6v"]
+[ext_resource type="PackedScene" uid="uid://d1g2lmkbiikgb" path="res://scenes/door.tscn" id="2_ir0v0"]
+[ext_resource type="PackedScene" uid="uid://mw5lpyf6ek3m" path="res://scenes/player.tscn" id="2_xpfil"]
+[ext_resource type="PackedScene" uid="uid://d0h0e8of1k5xc" path="res://scenes/buttons/button_floor_player.tscn" id="3_etmhr"]
+[ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://scenes/buttons/button_floor_block.tscn" id="3_xld32"]
+[ext_resource type="PackedScene" uid="uid://disorvkpd4otd" path="res://scenes/walls/moving_wall.tscn" id="5_xld32"]
+
+[node name="LvlTest" type="Node2D"]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD7//3/AAAAAAAAAAD7//7/AAAAAAEAAAD7/wAAAAAAAAMAAAD7/wEAAAAAAAQAAAD8//3/AAABAAAAAAD8//7/AAABAAEAAAD8////AAABAAIAAAD8/wAAAAABAAMAAAD8/wEAAAABAAQAAAD9//3/AAACAAAAAAD9//7/AAACAAEAAAD9////AAACAAIAAAD9/wAAAAACAAMAAAD9/wEAAAACAAQAAAD+/wAAAAADAAMAAAD+/wEAAAADAAQAAAD//wEAAAACAAQAAAACAP3/AAACAAAAAAADAP3/AAACAAAAAAAEAP3/AAACAAAAAAAFAP3/AAADAAAAAAAAAAEAAAACAAQAAAABAAEAAAACAAQAAAACAAEAAAACAAQAAAADAAEAAAACAAQAAAAEAAEAAAACAAQAAAAFAAEAAAADAAQAAAD+//7/AAACAAEAAAD+////AAACAAIAAAD/////AAACAAIAAAAAAP//AAACAAIAAAABAP//AAACAAIAAAACAP//AAACAAIAAAADAP//AAACAAIAAAAEAP//AAACAAIAAAAFAP//AAACAAIAAAAFAP7/AAADAAEAAAAEAP7/AAACAAEAAAADAP7/AAACAAEAAAACAP7/AAACAAEAAAD///7/AAACAAEAAAAAAP7/AAACAAEAAAABAP7/AAACAAEAAAD//wAAAAACAAMAAAAAAAAAAAACAAMAAAABAAAAAAACAAMAAAACAAAAAAACAAMAAAADAAAAAAACAAMAAAAEAAAAAAACAAMAAAAFAAAAAAADAAMAAAABAP3/AAACAAAAAAAAAP3/AAACAAAAAAD///3/AAACAAAAAAD+//3/AAACAAAAAAAGAP3/AAADAAAAAAAGAP7/AAADAAEAAAAGAAAAAAADAAMAAAAGAAEAAAADAAQAAAAHAP3/AAADAAAAAAAHAP7/AAADAAEAAAAHAAAAAAADAAMAAAAHAAEAAAADAAQAAAAIAP3/AAADAAAAAAAIAP7/AAADAAEAAAAIAAAAAAADAAMAAAAIAAEAAAADAAQAAAAJAP3/AAADAAAAAAAJAP7/AAADAAEAAAAJAP//AAACAAIAAAAJAAAAAAADAAMAAAAJAAEAAAADAAQAAAAKAP3/AAADAAAAAAAKAP7/AAADAAEAAAAKAP//AAACAAIAAAAKAAAAAAADAAMAAAAKAAEAAAADAAQAAAALAP3/AAADAAAAAAALAP7/AAACAAIAAAALAP//AAACAAIAAAALAAAAAAADAAMAAAALAAEAAAADAAQAAAAMAP3/AAADAAAAAAAMAP7/AAACAAIAAAAMAP//AAACAAIAAAAMAAAAAAACAAIAAAAMAAEAAAADAAQAAAANAP3/AAADAAAAAAANAP7/AAACAAIAAAANAP//AAACAAIAAAANAAAAAAACAAIAAAANAAEAAAADAAQAAAAOAP3/AAADAAAAAAAOAP7/AAACAAIAAAAOAP//AAACAAIAAAAOAAAAAAACAAIAAAAOAAEAAAADAAQAAAAPAP3/AAAEAAAAAAAPAP7/AAAEAAEAAAAPAP//AAAEAAIAAAAPAAAAAAAEAAMAAAAPAAEAAAAEAAQAAAAHAP//AAACAAIAAAAGAP//AAACAAIAAAD7////AAACAAIAAAD6////AAACAAIAAAD5////AAACAAIAAAD4////AAACAAIAAAA=")
+tile_set = ExtResource("1_b5x6v")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAMAP7/AQAAAAAAAQAMAP//AQAAAAAAAQANAP//AQAAAAAAAQANAP7/AQAAAAAAAQAOAP//AQAAAAAAAQAOAAAAAQAAAAAAAQAOAP7/AQAAAAAAAQANAAAAAQAAAAAAAQAMAAAAAQAAAAAAAQAIAP//AQAAAAAAAgABAP7/AQAAAAAABAA=")
+tile_set = ExtResource("1_b5x6v")
+
+[node name="door" parent="." instance=ExtResource("2_ir0v0")]
+position = Vector2(-1064, -126)
+rotation = 1.5707964
+scale = Vector2(2.0604486, 4.0391583)
+signals_needed = 2
+
+[node name="button_floor_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("3_xld32")]
+z_index = 0
+position = Vector2(-122, -358)
+signal_reciver = NodePath("../door")
+
+[node name="button_floor_player" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("3_etmhr")]
+position = Vector2(-589, -125)
+signal_reciver = NodePath("../door")
+
+[node name="MovingWall" parent="." instance=ExtResource("5_xld32")]
+position = Vector2(1114, -1016)
+scale = Vector2(4, 4)
+
+[node name="Marker2D" parent="MovingWall" index="2"]
+position = Vector2(147.75, -1.5)
+
+[node name="Marker2D2" parent="MovingWall" index="3"]
+position = Vector2(-190, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_xpfil")]
+
+[editable path="MovingWall"]

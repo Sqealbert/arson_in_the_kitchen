@@ -1,27 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm71brrm4tl4"]
+[gd_scene load_steps=5 format=3 uid="uid://bm71brrm4tl4"]
 
 [ext_resource type="Script" uid="uid://5xdlfk5elevm" path="res://scripts/button_wall_block.gd" id="1_i1g8h"]
-[ext_resource type="Shader" uid="uid://cj6pxnsdnjgk6" path="res://shaders/red.gdshader" id="2_yohgk"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="3_0703s"]
+[ext_resource type="Texture2D" uid="uid://dra0joe4xc07y" path="res://grapics/button_wall_p.png" id="2_i1g8h"]
+[ext_resource type="Texture2D" uid="uid://di73qyrrop4mn" path="res://grapics/button_wall_d.png" id="3_yohgk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6h5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rha75"]
-shader = ExtResource("2_yohgk")
+size = Vector2(8.677763, 25.862823)
 
 [node name="button_wall_block" type="Area2D"]
-scale = Vector2(0.99441344, 0.24000013)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_i1g8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.999998, 2.500002)
 scale = Vector2(6.453276, 6.457145)
 shape = SubResource("RectangleShape2D_eb6h5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_rha75")
-texture = ExtResource("3_0703s")
+[node name="pressed" type="Sprite2D" parent="."]
+texture = ExtResource("2_i1g8h")
+
+[node name="unpressed" type="Sprite2D" parent="."]
+position = Vector2(22, -1)
+texture = ExtResource("3_yohgk")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

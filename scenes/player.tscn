@@ -52,10 +52,13 @@ zoom = Vector2(0.34, 0.34)
 [node name="Stapler_shots" type="Node" parent="."]
 
 [node name="StaplerProjectile" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+visible = false
 
 [node name="StaplerProjectile2" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+visible = false
 
 [node name="StaplerProjectile3" parent="Stapler_shots" instance=ExtResource("3_qhqgy")]
+visible = false
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7svjwksojukb"
+path="res://.godot/imported/Stapler_SFX .wav-0bed10ac9478330e54141ea8bfd1fe77.sample"
+
+[deps]
+
+source_file="res://Audio/Stapler_SFX .wav"
+dest_files=["res://.godot/imported/Stapler_SFX .wav-0bed10ac9478330e54141ea8bfd1fe77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

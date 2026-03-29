@@ -1,23 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1g2lmkbiikgb"]
+[gd_scene load_steps=5 format=3 uid="uid://d1g2lmkbiikgb"]
 
 [ext_resource type="Script" uid="uid://bqmu4i6wfmpyv" path="res://scripts/door.gd" id="1_83dcw"]
-[ext_resource type="Shader" uid="uid://beg5eas6mo72w" path="res://shaders/wall.gdshader" id="1_uvdjg"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="2_83dcw"]
+[ext_resource type="SpriteFrames" uid="uid://c1mnw4hmyrmjp" path="res://grapics/door_open/door_frames.tres" id="2_uvdjg"]
+[ext_resource type="AudioStream" uid="uid://bbrhq8nfrlv3h" path="res://Audio/Door_SFX.wav" id="3_83dcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la1wf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_18pbm"]
-shader = ExtResource("1_uvdjg")
+size = Vector2(38.364788, 243.99998)
 
 [node name="door" type="StaticBody2D"]
 script = ExtResource("1_83dcw")
 signals_needed = 1
 
+[node name="anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.005, 1)
+sprite_frames = ExtResource("2_uvdjg")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9073486e-06, -3.8146973e-06)
 scale = Vector2(6.3599987, 1)
 shape = SubResource("RectangleShape2D_la1wf")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-material = SubResource("ShaderMaterial_18pbm")
-scale = Vector2(0.15723273, 0.15999989)
-texture = ExtResource("2_83dcw")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_83dcw")

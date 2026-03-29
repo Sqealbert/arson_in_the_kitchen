@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7khgi3auhgyc"]
+
+[ext_resource type="PackedScene" uid="uid://bb8u25430albj" path="res://scenes/level_transition.tscn" id="1_op5p6"]
+
+[node name="StaplerGet" type="Node2D"]
+
+[node name="transitions" type="Node" parent="."]
+
+[node name="Level_transition" parent="transitions" instance=ExtResource("1_op5p6")]
+next_level = "res://scenes/levels/lvl_scate_get_and_puzzle.tscn"
+spawn_id = 1
+send_id = 2

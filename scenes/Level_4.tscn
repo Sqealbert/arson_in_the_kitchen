@@ -2,18 +2,18 @@
 
 [ext_resource type="TileSet" uid="uid://cuwn43hg8itwp" path="res://grapics/main_tileset.tres" id="1_qrbrg"]
 [ext_resource type="PackedScene" uid="uid://mw5lpyf6ek3m" path="res://scenes/player.tscn" id="2_bt28o"]
-[ext_resource type="PackedScene" uid="uid://disorvkpd4otd" path="res://scenes/moving_wall.tscn" id="2_f27ey"]
-[ext_resource type="PackedScene" uid="uid://b1fm2ggsxmab5" path="res://scenes/movable_fan.tscn" id="7_613hc"]
+[ext_resource type="PackedScene" uid="uid://disorvkpd4otd" path="res://scenes/walls/moving_wall.tscn" id="2_f27ey"]
+[ext_resource type="PackedScene" uid="uid://b1fm2ggsxmab5" path="res://scenes/walls/movable_fan.tscn" id="7_613hc"]
 [ext_resource type="PackedScene" uid="uid://d1g2lmkbiikgb" path="res://scenes/door.tscn" id="8_1wcwq"]
-[ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://scenes/button_floor_block.tscn" id="9_qh3ky"]
-[ext_resource type="PackedScene" uid="uid://d0h0e8of1k5xc" path="res://scenes/button_floor_player.tscn" id="10_pnomx"]
-[ext_resource type="PackedScene" uid="uid://bm71brrm4tl4" path="res://scenes/button_wall_block.tscn" id="11_bm0eo"]
+[ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://scenes/buttons/button_floor_block.tscn" id="9_qh3ky"]
+[ext_resource type="PackedScene" uid="uid://d0h0e8of1k5xc" path="res://scenes/buttons/button_floor_player.tscn" id="10_pnomx"]
+[ext_resource type="PackedScene" uid="uid://bm71brrm4tl4" path="res://scenes/buttons/button_wall_block.tscn" id="11_bm0eo"]
 
 [node name="Level4" type="Node2D"]
 
 [node name="floors_layer" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAAEAAEAAAABAAIAAAAFAAEAAAACAAIAAAAGAAEAAAACAAIAAAAHAAEAAAACAAIAAAAIAAEAAAACAAIAAAAJAAEAAAACAAIAAAAKAAEAAAABAAIAAAALAAEAAAACAAAAAAAMAAEAAAAEAAAAAAAMAAIAAAAEAAIAAAAMAAMAAAAEAAIAAAAMAAQAAAAEAAIAAAAMAAUAAAAEAAIAAAAMAAYAAAAEAAIAAAAMAAcAAAAEAAIAAAAMAAgAAAAEAAEAAAAMAAkAAAAEAAIAAAALAAkAAAADAAIAAAALAAoAAAADAAMAAAAMAAoAAAAEAAMAAAAGAAsAAAACAAQAAAAFAAsAAAACAAQAAAAEAAsAAAACAAQAAAADAAsAAAACAAQAAAACAAsAAAABAAQAAAABAAsAAAAAAAQAAAABAAoAAAAAAAMAAAABAAkAAAAAAAIAAAABAAgAAAAAAAIAAAABAAcAAAAAAAIAAAABAAYAAAAAAAIAAAABAAUAAAAAAAIAAAACAAUAAAABAAIAAAACAAQAAAABAAIAAAACAAMAAAABAAIAAAABAAMAAAAAAAIAAAABAAIAAAAAAAEAAAABAAQAAAAAAAIAAAACAAIAAAABAAEAAAADAAIAAAACAAIAAAAEAAIAAAACAAIAAAAFAAIAAAACAAIAAAAGAAIAAAACAAIAAAAHAAIAAAACAAIAAAAIAAIAAAACAAIAAAAKAAIAAAACAAIAAAAKAAMAAAACAAIAAAALAAMAAAADAAIAAAALAAQAAAADAAIAAAALAAIAAAADAAEAAAAJAAIAAAACAAIAAAAIAAMAAAACAAIAAAAHAAMAAAACAAIAAAAHAAQAAAACAAIAAAAGAAQAAAACAAIAAAAFAAUAAAACAAIAAAAEAAUAAAACAAIAAAADAAUAAAACAAIAAAADAAQAAAACAAIAAAADAAMAAAACAAIAAAACAAYAAAABAAIAAAACAAcAAAABAAIAAAACAAgAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAACAAIAAAAEAAkAAAACAAIAAAAFAAkAAAACAAIAAAAGAAkAAAACAAIAAAAHAAkAAAACAAIAAAACAAoAAAABAAMAAAADAAoAAAACAAMAAAAEAAoAAAACAAMAAAAFAAoAAAACAAMAAAAGAAoAAAACAAMAAAAHAAoAAAACAAMAAAAIAAoAAAACAAMAAAAJAAoAAAACAAMAAAAKAAoAAAACAAMAAAALAAgAAAADAAIAAAALAAcAAAADAAIAAAALAAYAAAADAAIAAAALAAUAAAADAAIAAAAKAAcAAAACAAIAAAAKAAgAAAACAAIAAAAKAAkAAAACAAIAAAAJAAkAAAACAAIAAAAIAAgAAAACAAIAAAAHAAgAAAACAAIAAAAIAAcAAAACAAIAAAAJAAcAAAACAAIAAAAIAAkAAAACAAIAAAAJAAgAAAACAAIAAAAGAAgAAAACAAIAAAAFAAgAAAACAAIAAAAEAAgAAAACAAIAAAADAAgAAAACAAIAAAADAAcAAAACAAIAAAAEAAcAAAACAAIAAAAFAAcAAAACAAIAAAAGAAcAAAACAAIAAAAHAAcAAAACAAIAAAAFAAYAAAACAAIAAAAGAAYAAAACAAIAAAAHAAYAAAACAAIAAAAIAAYAAAACAAIAAAAJAAYAAAACAAIAAAAKAAYAAAACAAIAAAAKAAUAAAACAAIAAAAJAAUAAAACAAIAAAAIAAUAAAACAAIAAAAHAAUAAAACAAIAAAAGAAUAAAACAAIAAAAJAAQAAAACAAIAAAAKAAQAAAACAAIAAAAJAAMAAAACAAIAAAAGAAMAAAACAAIAAAAFAAMAAAACAAIAAAAFAAQAAAACAAIAAAAEAAQAAAACAAIAAAADAAYAAAACAAIAAAAEAAYAAAACAAIAAAAEAAMAAAACAAIAAAAIAAQAAAACAAIAAAAEAPv/AAAAAAIAAAAEAPr/AAAAAAIAAAAEAPn/AAAAAAEAAAAKAPv/AAAEAAIAAAAKAPr/AAAEAAIAAAAKAPn/AAAEAAEAAAAEAPj/AAAAAAAAAAAFAPj/AAABAAAAAAAFAPn/AAABAAEAAAAJAPj/AAADAAAAAAAJAPn/AAADAAEAAAAKAPj/AAAEAAAAAAAIAPj/AAACAAAAAAAGAPj/AAACAAAAAAAHAAAAAAACAAIAAAAFAPv/AAABAAIAAAAFAPr/AAABAAIAAAAGAPn/AAACAAEAAAAIAPn/AAACAAEAAAAJAPr/AAADAAIAAAAJAPv/AAADAAIAAAAGAPr/AAACAAIAAAAHAPr/AAACAAIAAAAIAPr/AAAHAAEAAAAIAPv/AAAHAAEAAAAHAPv/AAACAAIAAAAGAPv/AAACAAIAAAAHAPz/AAACAAIAAAAHAP3/AAACAAIAAAAHAP7/AAACAAIAAAAHAP//AAACAAIAAAAHAPn/AAAHAAEAAAAHAPj/AAACAAIAAAAHAPf/AAACAAIAAAAHAPb/AAACAAIAAAAHAAsAAAACAAQAAAAIAAsAAAACAAQAAAAJAAsAAAACAAQAAAAKAAsAAAACAAQAAAALAAsAAAADAAQAAAAMAAsAAAAEAAQAAAAEAAAAAAAAAAIAAAAEAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAEAP3/AAAAAAIAAAAEAPz/AAAAAAIAAAAKAAAAAAAEAAIAAAAKAP//AAAEAAIAAAAKAP7/AAAEAAIAAAAKAP3/AAAEAAIAAAAKAPz/AAAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAAEAAEAAAAHAAIAAAAFAAEAAAABAAIAAAAGAAEAAAACAAIAAAAHAAEAAAACAAIAAAAIAAEAAAACAAIAAAAJAAEAAAADAAIAAAAKAAEAAAAFAAIAAAALAAEAAAACAAAAAAAMAAEAAAAEAAAAAAAMAAIAAAAEAAIAAAAMAAMAAAAEAAIAAAAMAAQAAAAEAAIAAAAMAAUAAAAEAAIAAAAMAAYAAAAEAAIAAAAMAAcAAAAEAAIAAAAMAAgAAAAEAAEAAAAMAAkAAAAEAAIAAAALAAkAAAADAAIAAAALAAoAAAADAAMAAAAMAAoAAAAEAAMAAAAGAAsAAAACAAQAAAAFAAsAAAACAAQAAAAEAAsAAAACAAQAAAADAAsAAAACAAQAAAACAAsAAAABAAQAAAABAAsAAAAAAAQAAAABAAoAAAAAAAMAAAABAAkAAAAAAAIAAAABAAgAAAAAAAIAAAABAAcAAAAAAAIAAAABAAYAAAAAAAIAAAABAAUAAAAAAAIAAAACAAUAAAABAAIAAAACAAQAAAABAAIAAAACAAMAAAABAAIAAAABAAMAAAAAAAIAAAABAAIAAAAAAAEAAAABAAQAAAAAAAIAAAACAAIAAAABAAEAAAADAAIAAAACAAEAAAAEAAIAAAACAAEAAAAFAAIAAAACAAIAAAAGAAIAAAACAAIAAAAHAAIAAAACAAIAAAAIAAIAAAACAAIAAAAKAAIAAAACAAEAAAAKAAMAAAACAAIAAAALAAMAAAADAAIAAAALAAQAAAADAAIAAAALAAIAAAADAAEAAAAJAAIAAAACAAIAAAAIAAMAAAACAAIAAAAHAAMAAAACAAIAAAAHAAQAAAACAAIAAAAGAAQAAAACAAIAAAAFAAUAAAACAAIAAAAEAAUAAAACAAIAAAADAAUAAAACAAIAAAADAAQAAAACAAIAAAADAAMAAAACAAIAAAACAAYAAAABAAIAAAACAAcAAAABAAIAAAACAAgAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAACAAIAAAAEAAkAAAACAAIAAAAFAAkAAAACAAIAAAAGAAkAAAACAAIAAAAHAAkAAAACAAIAAAACAAoAAAABAAMAAAADAAoAAAACAAMAAAAEAAoAAAACAAMAAAAFAAoAAAACAAMAAAAGAAoAAAACAAMAAAAHAAoAAAACAAMAAAAIAAoAAAACAAMAAAAJAAoAAAACAAMAAAAKAAoAAAACAAMAAAALAAgAAAADAAIAAAALAAcAAAADAAIAAAALAAYAAAADAAIAAAALAAUAAAADAAIAAAAKAAcAAAACAAIAAAAKAAgAAAACAAIAAAAKAAkAAAACAAIAAAAJAAkAAAACAAIAAAAIAAgAAAACAAIAAAAHAAgAAAACAAIAAAAIAAcAAAACAAIAAAAJAAcAAAACAAIAAAAIAAkAAAACAAIAAAAJAAgAAAACAAIAAAAGAAgAAAACAAIAAAAFAAgAAAACAAIAAAAEAAgAAAACAAIAAAADAAgAAAACAAIAAAADAAcAAAACAAIAAAAEAAcAAAACAAIAAAAFAAcAAAACAAIAAAAGAAcAAAACAAIAAAAHAAcAAAACAAIAAAAFAAYAAAACAAIAAAAGAAYAAAACAAIAAAAHAAYAAAACAAIAAAAIAAYAAAACAAIAAAAJAAYAAAACAAIAAAAKAAYAAAACAAIAAAAKAAUAAAACAAIAAAAJAAUAAAACAAIAAAAIAAUAAAACAAIAAAAHAAUAAAACAAIAAAAGAAUAAAACAAIAAAAJAAQAAAACAAIAAAAKAAQAAAACAAIAAAAJAAMAAAACAAIAAAAGAAMAAAACAAIAAAAFAAMAAAACAAIAAAAFAAQAAAACAAIAAAAEAAQAAAACAAIAAAADAAYAAAACAAIAAAAEAAYAAAACAAIAAAAEAAMAAAACAAIAAAAIAAQAAAACAAIAAAAEAPv/AAAAAAIAAAAEAPr/AAAAAAIAAAAEAPn/AAAAAAEAAAAKAPv/AAAEAAIAAAAKAPr/AAAEAAIAAAAKAPn/AAAEAAEAAAAEAPj/AAAAAAAAAAAFAPj/AAABAAAAAAAFAPn/AAABAAEAAAAJAPj/AAADAAAAAAAJAPn/AAADAAEAAAAKAPj/AAAEAAAAAAAIAPj/AAACAAAAAAAGAPj/AAACAAAAAAAHAAAAAAACAAIAAAAFAPv/AAABAAIAAAAFAPr/AAABAAIAAAAGAPn/AAACAAEAAAAIAPn/AAACAAEAAAAJAPr/AAADAAIAAAAJAPv/AAADAAIAAAAGAPr/AAACAAIAAAAHAPr/AAACAAIAAAAIAPr/AAACAAIAAAAIAPv/AAACAAIAAAAHAPv/AAACAAIAAAAGAPv/AAACAAIAAAAHAPz/AAACAAIAAAAHAP3/AAACAAIAAAAHAP7/AAACAAIAAAAHAP//AAACAAIAAAAHAPn/AAACAAIAAAAHAPj/AAACAAIAAAAHAPf/AAACAAIAAAAHAPb/AAACAAIAAAAHAAsAAAACAAQAAAAIAAsAAAACAAQAAAAJAAsAAAACAAQAAAAKAAsAAAACAAQAAAALAAsAAAADAAQAAAAMAAsAAAAEAAQAAAAEAAAAAAAAAAIAAAAEAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAEAP3/AAAAAAIAAAAEAPz/AAAAAAIAAAAKAAAAAAAEAAIAAAAKAP//AAAEAAIAAAAKAP7/AAAEAAIAAAAKAP3/AAAEAAIAAAAKAPz/AAAEAAIAAAAFAPz/AAAFAAMAAAAGAPz/AAAHAAMAAAAIAPz/AAAFAAMAAAAJAPz/AAAHAAMAAAAJAP3/AAAHAAQAAAAJAP7/AAAHAAQAAAAJAP//AAAHAAQAAAAJAAAAAAAHAAUAAAAIAP//AAAFAAQAAAAIAAAAAAAFAAUAAAAIAP7/AAAFAAQAAAAIAP3/AAAFAAQAAAAFAP3/AAAFAAQAAAAFAP7/AAAFAAQAAAAFAP//AAAFAAQAAAAFAAAAAAAFAAUAAAAGAAAAAAAHAAUAAAAGAP3/AAAHAAQAAAAGAP7/AAAHAAQAAAAGAP//AAAHAAQAAAA=")
 tile_set = ExtResource("1_qrbrg")
 
 [node name="additions_layer" type="TileMapLayer" parent="."]
@@ -34,11 +34,6 @@ position = Vector2(-78.723404, -1.2765961)
 position = Vector2(2475, 1325)
 rotation = 1.5707964
 
-[node name="door" parent="." instance=ExtResource("8_1wcwq")]
-position = Vector2(1831, -1790)
-scale = Vector2(1.8399999, 3.84)
-signals_needed = 2
-
 [node name="button_floor_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("9_qh3ky")]
 position = Vector2(2316, -1340)
 signal_reciver = NodePath("../door")
@@ -48,52 +43,14 @@ position = Vector2(1380, -1347)
 signal_reciver = NodePath("../door")
 
 [node name="button_wall_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("11_bm0eo")]
-position = Vector2(1238, -1592)
-rotation = -1.5707964
+position = Vector2(1195, -1589)
 signal_reciver = NodePath("../door")
 
 [node name="Player" parent="." instance=ExtResource("2_bt28o")]
 position = Vector2(2365, 2382)
 
-[connection signal="body_entered" from="additions_layer/VoidZone" to="additions_layer/VoidZone/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/VoidZone" to="additions_layer/VoidZone/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142370" to="additions_layer/@Area2D@142370/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142370" to="additions_layer/@Area2D@142370/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142371" to="additions_layer/@Area2D@142371/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142371" to="additions_layer/@Area2D@142371/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142372" to="additions_layer/@Area2D@142372/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142372" to="additions_layer/@Area2D@142372/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142373" to="additions_layer/@Area2D@142373/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142373" to="additions_layer/@Area2D@142373/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142374" to="additions_layer/@Area2D@142374/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142374" to="additions_layer/@Area2D@142374/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142375" to="additions_layer/@Area2D@142375/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142375" to="additions_layer/@Area2D@142375/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142376" to="additions_layer/@Area2D@142376/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142376" to="additions_layer/@Area2D@142376/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142377" to="additions_layer/@Area2D@142377/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142377" to="additions_layer/@Area2D@142377/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142378" to="additions_layer/@Area2D@142378/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142378" to="additions_layer/@Area2D@142378/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142379" to="additions_layer/@Area2D@142379/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142379" to="additions_layer/@Area2D@142379/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142380" to="additions_layer/@Area2D@142380/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142380" to="additions_layer/@Area2D@142380/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142381" to="additions_layer/@Area2D@142381/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142381" to="additions_layer/@Area2D@142381/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142382" to="additions_layer/@Area2D@142382/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142382" to="additions_layer/@Area2D@142382/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142383" to="additions_layer/@Area2D@142383/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142383" to="additions_layer/@Area2D@142383/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142384" to="additions_layer/@Area2D@142384/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142384" to="additions_layer/@Area2D@142384/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142385" to="additions_layer/@Area2D@142385/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142385" to="additions_layer/@Area2D@142385/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142386" to="additions_layer/@Area2D@142386/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142386" to="additions_layer/@Area2D@142386/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142387" to="additions_layer/@Area2D@142387/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142387" to="additions_layer/@Area2D@142387/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="additions_layer/@Area2D@142388" to="additions_layer/@Area2D@142388/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="additions_layer/@Area2D@142388" to="additions_layer/@Area2D@142388/CollisionShape2D" method="_on_void_zone_body_exited"]
+[node name="door" parent="." instance=ExtResource("8_1wcwq")]
+position = Vector2(1838, -1832)
+signals_needed = 2
 
 [editable path="MovingWall2"]
