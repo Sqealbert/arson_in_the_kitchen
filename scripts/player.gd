@@ -17,7 +17,7 @@ func get_input():
 	
 
 func _physics_process(_delta: float) -> void:
-	if is_node_ready():
+	if is_node_ready() and not $fall_timer.time_left:
 		get_input()
 		velocity = speed * direction
 		
@@ -36,13 +36,13 @@ func _physics_process(_delta: float) -> void:
 				c.get_collider().apply_central_force(-c.get_normal() * push_force)
 		
 		# stapler
-		if Input.is_action_just_pressed("shoot_stapler"):
+		if Input.is_action_just_pressed("shoot_stapler") and GameState.has_stapler:
 			$Stapler_shots.get_children()[next_stapler_index].shoot()
 			next_stapler_index += 1
 			if next_stapler_index >= len($Stapler_shots.get_children()):
 				next_stapler_index = 0
 		# fan
-		if Input.is_action_pressed("fan"):
+		if Input.is_action_pressed("fan") and GameState.has_fan:
 			$wind_pivot/wind.active = true
 			$wind_pivot/wind.visible = true
 			$wind_pivot/wind.dir = lasting_dir
@@ -52,25 +52,33 @@ func _physics_process(_delta: float) -> void:
 			$wind_pivot/wind.visible = false
 			
 		#dash
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") and GameState.has_scate:
 			$dash_timer.start()
 			dash_dir = lasting_dir
 			dashing = true
 			
 		# falme
-		if Input.is_action_just_pressed("lighter"):
+		if Input.is_action_just_pressed("lighter") and GameState.has_lighter:
 			$flame_pivot.look_at($flame_pivot.global_position + lasting_dir)
 			await get_tree().physics_frame # so that the collision chatches to the rotation
 			for body:StaticBody2D in $flame_pivot/Area2D.get_overlapping_bodies():
 				if body.is_in_group("flamable") and not body.on_fire:
 					body.catch_fire()
-			
+					
+	elif $fall_timer.time_left:
+		rotate(0.1)
+		scale = Vector2(1, 1) * lerp(0, 1, $fall_timer.time_left/$fall_timer.wait_time)
 		
 			
 func fall():
 	if not dashing:
-		print("aaaaaa")
+		$fall_timer.start()
+		$CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
+
+
+func _on_fall_timer_timeout() -> void:
+	get_tree().reload_current_scene()

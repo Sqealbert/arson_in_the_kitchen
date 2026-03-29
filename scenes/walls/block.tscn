@@ -20,3 +20,12 @@ texture = ExtResource("2_cgrg5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cgrg5")
+
+[node name="fall_timer" type="Timer" parent="."]
+
+[node name="imovable_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="fall_timer" to="." method="_on_fall_timer_timeout"]
+[connection signal="timeout" from="imovable_timer" to="." method="_on_imovable_timer_timeout"]

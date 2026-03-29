@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bomphtocmnw2s"]
+
+[ext_resource type="Texture2D" uid="uid://k00m8adn12yr" path="res://grapics/IMG_1314.png" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://bhqsrn5hgj5d3" path="res://scenes/ui.gd" id="1_ro3t7"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ro3t7")
+
+[node name="fad_black" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(3500, 2000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.18039216, 0.18039216, 0.5254902)
+
+[node name="pause" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.00006
+offset_top = -944.99994
+offset_right = 1972.0
+offset_bottom = 723.00006
+grow_horizontal = 2
+scale = Vector2(0.35802037, 0.35802037)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_dj8aq")

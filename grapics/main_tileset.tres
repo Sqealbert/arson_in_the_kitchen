@@ -80,7 +80,7 @@ texture_region_size = Vector2i(245, 245)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fylvm"]
 scenes/1/scene = ExtResource("2_qxhw0")
 scenes/2/scene = ExtResource("3_fp6tp")
-scenes/4/scene = ExtResource("4_drstl")
+scenes/3/scene = ExtResource("4_drstl")
 
 [resource]
 tile_size = Vector2i(245, 245)

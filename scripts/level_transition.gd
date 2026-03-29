@@ -13,7 +13,8 @@ func _enter_tree() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_class("CharacterBody2D")and $collision_delay.is_stopped():
+	print(body.name, name)
+	if body.name == "Player" and $collision_delay.is_stopped():
 		body.visible = false
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		# plat door anim
