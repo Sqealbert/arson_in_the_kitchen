@@ -15,6 +15,8 @@ func get_input():
 	if direction:
 		lasting_dir = direction # this stores the dprection the player is looking in, not just moving in !!!
 	
+func _ready() -> void:
+	$Camera2D.make_current()
 
 func _physics_process(_delta: float) -> void:
 	if is_node_ready() and not $fall_timer.time_left:
@@ -37,28 +39,33 @@ func _physics_process(_delta: float) -> void:
 		
 		# stapler
 		if Input.is_action_just_pressed("shoot_stapler") and GameState.has_stapler:
+			$sound_stapler.play()
 			$Stapler_shots.get_children()[next_stapler_index].shoot()
 			next_stapler_index += 1
 			if next_stapler_index >= len($Stapler_shots.get_children()):
 				next_stapler_index = 0
 		# fan
 		if Input.is_action_pressed("fan") and GameState.has_fan:
+			$wind_pivot/wind/AudioStreamPlayer2D.play()
 			$wind_pivot/wind.active = true
 			$wind_pivot/wind.visible = true
 			$wind_pivot/wind.dir = lasting_dir
 			$wind_pivot.look_at($wind_pivot.global_position + lasting_dir)
 		else:
+			$wind_pivot/wind/AudioStreamPlayer2D.stop()
 			$wind_pivot/wind.active = false
 			$wind_pivot/wind.visible = false
 			
 		#dash
 		if Input.is_action_just_pressed("dash") and GameState.has_scate:
+			$sound_scate.play()
 			$dash_timer.start()
 			dash_dir = lasting_dir
 			dashing = true
 			
 		# falme
 		if Input.is_action_just_pressed("lighter") and GameState.has_lighter:
+			$sound_lighter.play()
 			$flame_pivot.look_at($flame_pivot.global_position + lasting_dir)
 			await get_tree().physics_frame # so that the collision chatches to the rotation
 			for body:StaticBody2D in $flame_pivot/Area2D.get_overlapping_bodies():

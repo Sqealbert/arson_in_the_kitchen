@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2hwean7i4aif"]
+[gd_scene load_steps=6 format=3 uid="uid://b2hwean7i4aif"]
 
 [ext_resource type="Script" uid="uid://dd6h3t6q70voq" path="res://scripts/wind.gd" id="1_wx8gj"]
+[ext_resource type="AudioStream" uid="uid://g1loag6pthrt" path="res://Audio/Fan_SFX.wav" id="2_p78np"]
 
 [sub_resource type="Curve" id="Curve_iwlsb"]
 _limits = [0.0, 9.83, 0.0, 1.0]
@@ -46,6 +47,12 @@ collision_mask = 30
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -33)
 shape = SubResource("RectangleShape2D_jsuhd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(-0.07202962, 0.14898136)
+stream = ExtResource("2_p78np")
+autoplay = true
+max_distance = 3000.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

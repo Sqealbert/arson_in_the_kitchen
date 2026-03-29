@@ -23,6 +23,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if gift_var == 5:
 			GameState.has_key = true
 		$open_timer.start()
+		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2D2.play()
 		open = true
 	
 func _on_open_timer_timeout() -> void:
@@ -36,6 +38,5 @@ func _physics_process(delta: float) -> void:
 		$item.position.y -= 250 * delta
 
 
-func _on_float_timer_timeout() -> void:
+func _on_audio_stream_player_2d_2_finished() -> void:
 	$item.visible = false
-	
