@@ -1,18 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1tdvfvwqeg60"]
+[gd_scene load_steps=7 format=3 uid="uid://d1tdvfvwqeg60"]
 
-[ext_resource type="Shader" uid="uid://cdqr37yqw8lui" path="res://shaders/green.gdshader" id="1_22hlj"]
 [ext_resource type="Script" uid="uid://dl33fitsvrtay" path="res://scripts/vines.gd" id="1_kckem"]
-[ext_resource type="Texture2D" uid="uid://b0birx6ugnlq1" path="res://grapics/wall.png" id="2_kckem"]
-[ext_resource type="Shader" uid="uid://cj6pxnsdnjgk6" path="res://shaders/red.gdshader" id="4_h0vb5"]
+[ext_resource type="Texture2D" uid="uid://bk4j63ejk4h0t" path="res://grapics/Wine.png" id="2_kckem"]
+[ext_resource type="Texture2D" uid="uid://ynle15o6xjrv" path="res://grapics/IMG_1322.png" id="4_h0vb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vb5"]
 size = Vector2(244, 245)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbp7f"]
-shader = ExtResource("1_22hlj")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_thmsl"]
-shader = ExtResource("4_h0vb5")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0vb5"]
 radius = 291.0017
@@ -27,15 +22,15 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_h0vb5")
 
 [node name="vine" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_nbp7f")
+position = Vector2(-25, -18)
 texture = ExtResource("2_kckem")
 
 [node name="fire" type="Sprite2D" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_thmsl")
-rotation = 0.7853982
-scale = Vector2(-0.565231, 0.56535625)
-texture = ExtResource("2_kckem")
+position = Vector2(8, -3)
+scale = Vector2(0.22479439, 0.22479439)
+texture = ExtResource("4_h0vb5")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

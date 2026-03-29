@@ -2,16 +2,23 @@ extends StaticBody2D
 
 
 var on_fire = false
+var start_fire_time
 
 func _ready() -> void:
 	$flame_timer.wait_time = randf_range(1.5, 3) # for randomness
 	$flame_tic_timer.wait_time = randf_range(0.5, 1.0)
+	
+func _physics_process(_delta: float) -> void:	
+	if start_fire_time:
+		$fire.scale = Vector2(0.2, 0.2) * lerpf(0.811, 1.111, sin((Time.get_ticks_usec() - start_fire_time)/200000))
+		
 func burn_down():
 	for body:StaticBody2D in $Area2D.get_overlapping_bodies():
 		if body.is_in_group("flamable") and not  body.on_fire:
 			spread_fire(body)
 	
 func catch_fire():
+	start_fire_time = Time.get_ticks_usec() + randf()
 	$flame_timer.start()
 	on_fire = true
 	$flame_tic_timer.start()
