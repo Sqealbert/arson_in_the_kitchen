@@ -79,6 +79,7 @@ func _physics_process(_delta: float) -> void:
 			
 func fall():
 	if not dashing:
+		$AudioStreamPlayer2D.play()
 		$fall_timer.start()
 		$CollisionShape2D.set_deferred("disabled", true)
 

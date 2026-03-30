@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 	
 func _on_body_entered(body: Node2D) -> void:
 	moving = false
+	$AudioStreamPlayer2D.play()
 	if body.is_in_group("moving"):
 		body.stop()
 		shot_bodies.append(body)

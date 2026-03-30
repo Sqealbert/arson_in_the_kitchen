@@ -1,19 +1,329 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqxk4pqaowqn3"]
+[gd_scene load_steps=12 format=4 uid="uid://dqxk4pqaowqn3"]
 
 [ext_resource type="PackedScene" uid="uid://bb8u25430albj" path="res://scenes/level_transition.tscn" id="1_v3mb1"]
+[ext_resource type="Script" uid="uid://cyyuo0u1m5jvt" path="res://scenes/levels/lvl_script.gd" id="1_xh0qi"]
+[ext_resource type="TileSet" uid="uid://cuwn43hg8itwp" path="res://grapics/main_tileset.tres" id="2_12lo0"]
+[ext_resource type="PackedScene" uid="uid://d1g2lmkbiikgb" path="res://scenes/door.tscn" id="4_vvox2"]
+[ext_resource type="PackedScene" uid="uid://cawkls2bavskj" path="res://scenes/gift.tscn" id="5_ow3ct"]
+[ext_resource type="Texture2D" uid="uid://biqmgequhjaj6" path="res://grapics/Skate.png" id="6_j1omb"]
+[ext_resource type="Texture2D" uid="uid://qo6m8g3y84gv" path="res://grapics/dash_tut.png" id="7_dv2su"]
+[ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://scenes/buttons/button_floor_block.tscn" id="8_vvox2"]
+[ext_resource type="PackedScene" uid="uid://d0h0e8of1k5xc" path="res://scenes/buttons/button_floor_player.tscn" id="9_ow3ct"]
+[ext_resource type="PackedScene" uid="uid://b1fm2ggsxmab5" path="res://scenes/walls/movable_fan.tscn" id="10_ow3ct"]
+[ext_resource type="PackedScene" uid="uid://c41gs7je8f8yo" path="res://scenes/buttons/button_wall_block.tscn" id="11_j1omb"]
 
 [node name="LvlScateGetAndPuzzle" type="Node2D"]
+script = ExtResource("1_xh0qi")
+
+[node name="floor" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAD+/wMAAAAAAAIAAAD+/wQAAAAAAAMAAAD//wMAAAABAAIAAAD//wQAAAABAAMAAAAAAAMAAAACAAIAAAAAAAQAAAACAAMAAAADAAMAAAACAAIAAAADAAQAAAACAAMAAAAEAAMAAAADAAIAAAAEAAQAAAADAAMAAAAFAAMAAAAEAAIAAAAFAAQAAAAEAAMAAAABAAMAAAACAAIAAAABAAQAAAACAAMAAAACAAMAAAACAAIAAAACAAQAAAACAAMAAAAEAAIAAAADAAIAAAAFAAIAAAAFAAAAAAAFAP//AAAFAAIAAAAEAAEAAAACAAIAAAAEAAAAAAACAAIAAAAFAAAAAAACAAEAAAAGAAAAAAACAAEAAAAGAP//AAAHAAIAAAAIAP//AAACAAIAAAAJAP//AAACAAIAAAAIAAEAAAACAAIAAAAJAAEAAAACAAIAAAAIAAAAAAACAAIAAAAJAAAAAAACAAIAAAAHAAAAAAACAAIAAAAHAP//AAABAAIAAAAHAAEAAAACAAIAAAAFAP7/AAAEAAIAAAAFAP3/AAAEAAAAAAAEAP3/AAAFAAIAAAABAP3/AAAHAAIAAAAAAP3/AAACAAAAAAD///3/AAACAAAAAAD+/wEAAAAHAAAAAAD+/wIAAAAAAAIAAAD+//7/AAAHAAIAAAD+//3/AAAAAAAAAAD9//7/AAAFAAIAAAD9//3/AAAEAAIAAAD5//3/AAAAAAMAAAD5//7/AAAAAAMAAAD5////AAAAAAMAAAD6//7/AAABAAIAAAD6////AAABAAMAAAD7//7/AAACAAIAAAD8//7/AAADAAIAAAD7////AAACAAMAAAD8////AAACAAMAAAD9////AAACAAEAAAD+////AAACAAEAAAD///7/AAABAAEAAAAAAP7/AAAFAAMAAAABAP7/AAAHAAMAAAACAP7/AAACAAIAAAADAP7/AAACAAIAAAAEAP7/AAAFAAUAAAAEAP//AAADAAIAAAD//wAAAAACAAIAAAD//wEAAAAFAAMAAAD//wIAAAAFAAUAAAABAAIAAAAHAAUAAAACAAIAAAACAAIAAAADAAIAAAACAAIAAAADAAEAAAACAAIAAAADAAAAAAACAAIAAAACAAAAAAACAAIAAAACAP//AAACAAIAAAABAP//AAAHAAQAAAAAAP//AAAFAAQAAAD/////AAACAAIAAAADAP//AAACAAIAAAABAAAAAAAHAAQAAAAAAAAAAAAFAAQAAAAAAAEAAAAGAAQAAAABAAEAAAAHAAQAAAACAAEAAAACAAIAAAAAAAIAAAAGAAUAAAD+/wcAAAAAAAQAAAD//wcAAAABAAQAAAAAAAcAAAACAAQAAAABAAcAAAACAAQAAAACAAcAAAACAAQAAAADAAcAAAACAAQAAAAEAAcAAAADAAQAAAAFAAcAAAAEAAQAAAD+/wUAAAAAAAMAAAD//wUAAAABAAMAAAAAAAUAAAACAAMAAAABAAUAAAACAAMAAAACAAUAAAACAAMAAAADAAUAAAACAAMAAAAEAAUAAAADAAMAAAAFAAUAAAAEAAMAAAD+/wYAAAAAAAMAAAD//wYAAAAHAAMAAAAAAAYAAAACAAMAAAABAAYAAAACAAMAAAACAAYAAAACAAMAAAADAAYAAAACAAMAAAAEAAYAAAAFAAMAAAAFAAYAAAAEAAMAAAD5//r/AAAAAAAAAAD5//v/AAAAAAEAAAD6//r/AAAFAAIAABD6//v/AAABAAEAAAD7//j/AAACAAMAAAD7//n/AAACAAIAAAD7//r/AAACAAIAAAD7//v/AAACAAIAAAD8//r/AAAFAAIAAAD8//v/AAADAAEAAAD9//r/AAAEAAAAAAD9//v/AAAEAAIAAAD5//z/AAAAAAIAAAD9//z/AAAEAAIAAAD6//z/AAAFAAMAAAD7//z/AAAGAAMAAAD8//z/AAAHAAMAAAD6//3/AAAFAAUAAAD7//3/AAAGAAUAAAD8//3/AAAHAAUAAAAGAP3/AAAAAAAAAAAHAP3/AAABAAAAAAAIAP3/AAACAAAAAAAJAP3/AAACAAAAAAAGAAMAAAAAAAQAAAAHAAMAAAABAAQAAAAIAAMAAAACAAQAAAAJAAMAAAACAAQAAAAMAP3/AAAEAAAAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAIAAAAMAAEAAAAEAAMAAAAMAAMAAAAEAAQAAAAKAP3/AAACAAAAAAALAP3/AAADAAAAAAAKAAMAAAACAAQAAAALAAMAAAACAAQAAAAGAP7/AAAAAAEAAAAGAAIAAAAHAAAAAAAMAP7/AAAEAAIAAAAMAAIAAAAEAAIAAAAKAP7/AAACAAEAAAAKAP//AAACAAIAAAALAP7/AAADAAEAAAALAP//AAADAAIAAAAKAAEAAAACAAIAAAAKAAIAAAACAAMAAAALAAEAAAADAAIAAAALAAIAAAADAAMAAAAHAAIAAAABAAMAAAAIAAIAAAACAAMAAAAHAP7/AAABAAEAAAAIAP7/AAACAAEAAAAJAP7/AAACAAEAAAAKAAAAAAACAAIAAAALAAAAAAADAAIAAAAJAAIAAAACAAMAAAD5/wEAAAAAAAQAAAD6/wEAAAABAAQAAAD7/wEAAAACAAQAAAD8/wEAAAACAAQAAAD9/wEAAAACAAQAAAD5/wAAAAAAAAMAAAD6/wAAAAABAAMAAAD7/wAAAAACAAMAAAD8/wAAAAACAAMAAAD9/wAAAAACAAMAAAD+/wAAAAACAAMAAAAGAAEAAAACAAMAAAAFAAEAAAACAAMAAAADAP3/AAADAAIAAAADAPz/AAADAAIAAAADAPv/AAADAAIAAAD5//X/AAAAAAAAAAD5//b/AAAAAAEAAAD5//f/AAAAAAIAAAD5//j/AAAAAAMAAAD5//n/AAAAAAQAAAD6//X/AAABAAAAAAD6//b/AAABAAEAAAD6//f/AAABAAIAAAD6//j/AAABAAMAAAD6//n/AAAHAAAAAAD7//X/AAACAAAAAAD7//b/AAACAAEAAAD7//f/AAACAAIAAAD8//X/AAADAAAAAAD8//b/AAADAAEAAAD8//f/AAADAAIAAAD8//j/AAADAAMAAAD8//n/AAAFAAAAAAD9//X/AAAEAAAAAAD9//b/AAAEAAEAAAD9//f/AAAEAAIAAAD9//j/AAAEAAMAAAD9//n/AAAEAAQAAAACAP3/AAABAAIAAAACAPz/AAABAAIAAAACAPv/AAACAAIAAAAAAPn/AAAFAAQAAAAAAPr/AAAFAAQAAAAAAPv/AAAFAAUAAAAAAPj/AAAFAAQAAAAAAPf/AAAFAAQAAAABAPf/AAAHAAQAAAABAPj/AAAHAAQAAAABAPn/AAAHAAQAAAABAPr/AAAHAAQAAAAAAPb/AAAFAAMAAAABAPb/AAAHAAMAAAABAPv/AAAHAAUAAAABAPz/AAAHAAAAAAAAAPz/AAAGAAAAAAD///v/AAAAAAMAAAD///z/AAAAAAQAAAD///r/AAAAAAMAAAD///n/AAAAAAMAAAD///j/AAAAAAMAAAD///f/AAAAAAMAAAD///b/AAAAAAMAAAD///X/AAAAAAAAAAAAAPX/AAABAAAAAAABAPX/AAAHAAIAAAAEAPb/AAAFAAMAAAAFAPb/AAAHAAMAAAAEAPf/AAAFAAQAAAAEAPj/AAAFAAQAAAAEAPn/AAAFAAQAAAAEAPr/AAAFAAQAAAAEAPv/AAAFAAUAAAAFAPr/AAAHAAQAAAAFAPv/AAAHAAUAAAAFAPn/AAAHAAQAAAAFAPj/AAAHAAQAAAAFAPf/AAAHAAQAAAAEAPz/AAAFAAAAAAAFAPz/AAAGAAAAAAAGAPv/AAAEAAMAAAAGAPz/AAAEAAQAAAAGAPr/AAAEAAIAAAAGAPn/AAAEAAIAAAAGAPj/AAAEAAIAAAAGAPf/AAAEAAIAAAAGAPb/AAAEAAIAAAAFAPX/AAADAAAAAAAGAPX/AAAEAAAAAAAEAPX/AAAFAAIAAAACAPb/AAACAAIAAAACAPf/AAACAAIAAAACAPj/AAACAAIAAAACAPn/AAACAAIAAAACAPr/AAACAAIAAAADAPr/AAACAAIAAAADAPn/AAACAAIAAAADAPj/AAACAAIAAAADAPf/AAACAAIAAAADAPb/AAACAAIAAAACAPX/AAACAAIAAAACAPT/AAACAAIAAAACAPP/AAACAAIAAAADAPX/AAACAAIAAAABAPT/AAAHAAEAAAABAPP/AAAAAAIAAAADAPT/AAACAAIAAAADAPP/AAACAAIAAAAEAPT/AAAFAAAAAAABAPH/AAAAAAAAAAABAPL/AAAAAAEAAAACAPH/AAABAAAAAAACAPL/AAABAAEAAAADAPH/AAACAAAAAAADAPL/AAACAAEAAAAEAPH/AAACAAAAAAAFAPH/AAACAAAAAAAGAPH/AAACAAAAAAAHAPH/AAACAAAAAAAIAPH/AAACAAAAAAAJAPH/AAACAAAAAAAFAPT/AAACAAQAAAAGAPT/AAACAAQAAAAHAPT/AAACAAQAAAAIAPT/AAACAAQAAAAJAPT/AAACAAQAAAAKAPT/AAACAAQAAAAEAPP/AQAAAAAAAgAFAPP/AAACAAMAAAAGAPP/AAACAAMAAAAHAPP/AAACAAMAAAAIAPP/AAACAAMAAAAJAPP/AAACAAMAAAAKAPP/AAACAAMAAAAEAPL/AAACAAEAAAAFAPL/AAACAAEAAAAGAPL/AAACAAEAAAAHAPL/AAACAAEAAAAIAPL/AAACAAEAAAAJAPL/AAACAAEAAAAKAPL/AAACAAEAAAALAPT/AAACAAQAAAAMAPT/AAACAAQAAAANAPT/AAACAAQAAAAOAPT/AAACAAQAAAAPAPT/AAACAAQAAAAQAPT/AAACAAQAAAARAPT/AAACAAQAAAASAPT/AAACAAQAAAATAPT/AAACAAQAAAAUAPT/AAACAAQAAAAVAPT/AAACAAQAAAAWAO//AAAAAAAAAAAWAPD/AAAAAAEAAAAWAPH/AAAHAAIAAAAWAPL/AAACAAEAAAAWAPP/AAACAAMAAAAWAPT/AAAHAAAAAAAXAO//AAABAAAAAAAXAPD/AAABAAEAAAAXAPH/AAABAAIAAAAXAPL/AAACAAIAAAAXAPP/AAACAAIAAAAXAPT/AAABAAMAAAAYAO//AAACAAAAAAAYAPD/AAACAAEAAAAYAPH/AAACAAIAAAAYAPL/AAACAAIAAAAYAPP/AAACAAIAAAAYAPT/AAACAAIAAAAZAO//AAACAAAAAAAZAPD/AAACAAEAAAAZAPH/AAACAAIAAAAZAPL/AAACAAIAAAAZAPP/AAACAAIAAAAZAPT/AAACAAIAAAAaAO//AAACAAAAAAAaAPD/AAACAAEAAAAaAPH/AAACAAIAAAAaAPL/AAACAAIAAAAaAPP/AAACAAIAAAAaAPT/AAACAAIAAAAbAO//AAADAAAAAAAbAPD/AAADAAEAAAAbAPH/AAADAAIAAAAbAPL/AAADAAIAAAAbAPP/AAADAAIAAAAbAPT/AAADAAMAAAAcAO//AAAEAAAAAAAcAPD/AAAEAAIAAAAcAPH/AAAEAAEAAAAcAPL/AAAEAAIAAAAcAPP/AAAEAAMAAAAcAPT/AAAEAAIAAAAWAPb/AAAAAAQAAAAXAPb/AAABAAQAAAAYAPb/AAACAAQAAAAZAPb/AAACAAQAAAAaAPb/AAACAAQAAAAbAPb/AAACAAQAAAAcAPb/AAAEAAQAAAAWAPX/AAAAAAMAAAAXAPX/AAABAAMAAAAbAPX/AAADAAMAAAAcAPX/AAAEAAMAAAAaAPX/AAACAAMAAAAZAPX/AAACAAMAAAAYAPX/AAACAAMAAAAVAPH/AAAFAAIAAAALAPL/AAACAAIAAAAMAPL/AAACAAIAAAANAPL/AAACAAIAAAAOAPL/AAACAAIAAAAPAPL/AAACAAIAAAAQAPL/AAACAAIAAAARAPL/AAACAAIAAAASAPL/AAACAAIAAAATAPL/AAACAAIAAAAUAPL/AAACAAIAAAAVAPL/AAACAAIAAAAVAPP/AAACAAIAAAAUAPP/AAACAAIAAAATAPP/AAACAAIAAAASAPP/AAACAAIAAAARAPP/AAACAAIAAAAQAPP/AAACAAIAAAAPAPP/AAACAAIAAAAOAPP/AAACAAIAAAANAPP/AAACAAIAAAAMAPP/AAACAAIAAAALAPP/AAACAAIAAAANAPH/AAACAAIAAAAMAPH/AAACAAEAAAALAOv/AAAAAAIAAAALAOz/AAAAAAIAAAALAO3/AAAAAAIAAAALAO7/AAAAAAQAAAAMAO7/AAAHAAAAAAANAO7/AAABAAIAAAANAO//AAABAAIAAAAVAOz/AAAEAAIAAAAVAO3/AAAEAAIAAAAVAO7/AAAEAAIAAAAVAO//AAAFAAEAAAAMAO3/AAABAAMAAAANAO3/AAACAAIAAAASAO//AAACAAIAAAAUAOz/AAACAAIAAAAMAPD/AAAHAAIAAAAVAPD/AAAEAAIAAAANAPD/AAABAAIAAAAKAPH/AAAHAAIAAAAKAPD/AAAAAAAAAAALAPD/AAABAAAAAAALAPH/AAABAAEAAAAMAO//AAAAAAIAAAALAOj/AAAAAAEAAAALAOn/AAAAAAIAAAALAOf/AAAAAAAAAAAMAOf/AAABAAAAAAAMAOn/AAABAAEAAAANAOf/AAACAAAAAAAOAOf/AAACAAAAAAAPAOf/AAACAAAAAAAQAOf/AAACAAAAAAARAOf/AAACAAAAAAASAOf/AAACAAAAAAATAOf/AAACAAAAAAAUAOf/AAACAAAAAAAVAOf/AAADAAAAAAAWAOf/AAAEAAAAAAAWAOj/AAAEAAEAAAAWAOn/AAAEAAMAAAAWAOr/AAAEAAQAAAAVAOr/AAAFAAAAAAAVAOv/AAAEAAIAAAALAOr/AAAAAAIAAAAOAPH/AAAFAAUAAAAMAOz/AAAFAAUAAAAUAOj/AAAHAAMAAAAMAOj/AAAFAAMAAAAUAPH/AAAHAAUAAAAUAPD/AAAHAAQAAAAUAO//AAAHAAQAAAAUAO7/AAAHAAQAAAAUAO3/AAAHAAQAAAAUAOr/AAAHAAQAAAAUAOv/AAAHAAQAAAAUAOn/AAAHAAQAAAATAOj/AAAGAAMAAAASAOj/AAAGAAMAAAARAOj/AAAGAAMAAAAQAOj/AAAGAAMAAAAPAOj/AAAGAAMAAAAOAOj/AAAGAAMAAAANAOj/AAAGAAMAAAAMAOr/AAAFAAQAAAAMAOv/AAAFAAQAAAANAOz/AAAGAAUAAAAOAO3/AAAFAAQAAAAOAO7/AAAFAAQAAAAOAO//AAAFAAQAAAAOAPD/AAAFAAQAAAAPAPH/AAAGAAUAAAAQAPH/AAAGAAUAAAARAPH/AAAGAAUAAAASAPH/AAAGAAUAAAATAPH/AAAGAAUAAAARAO3/AAAGAAQAAAARAOz/AAAGAAQAAAAQAOz/AAAGAAQAAAAPAOz/AAAGAAQAAAAOAOz/AAAGAAQAAAAPAO3/AAAGAAQAAAAPAO7/AAAGAAQAAAAPAO//AAAGAAQAAAAPAPD/AAAGAAQAAAAQAPD/AAAGAAQAAAAQAO//AAAGAAQAAAAQAO7/AAAGAAQAAAAQAO3/AAAGAAQAAAARAO7/AAAGAAQAAAARAO//AAAGAAQAAAARAPD/AAAGAAQAAAASAPD/AAAGAAQAAAATAPD/AAAGAAQAAAATAO//AAAGAAQAAAATAO7/AAAGAAQAAAATAO3/AAAGAAQAAAATAOz/AAAGAAQAAAASAOz/AAAGAAQAAAASAO3/AAAGAAQAAAASAO7/AAAGAAQAAAANAOr/AAAGAAQAAAANAOn/AAAGAAQAAAAOAOn/AAAGAAQAAAAPAOn/AAAGAAQAAAAQAOn/AAAGAAQAAAARAOn/AAAGAAQAAAASAOn/AAAGAAQAAAATAOn/AAAGAAQAAAANAOv/AAAGAAQAAAAVAOn/AAACAAIAAAAVAOj/AAACAAIAAAA=")
+tile_set = ExtResource("2_12lo0")
+
+[node name="scene_placer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP7/AQAAAAAAAgAAAP//AQAAAAAAAgAAAAAAAQAAAAAAAgAAAAEAAQAAAAAAAgD//wEAAQAAAAAAAgD//wIAAQAAAAAAAgAAAAIAAQAAAAAAAgABAAIAAQAAAAAAAgABAAEAAQAAAAAAAgABAAAAAQAAAAAAAgABAP//AQAAAAAAAgABAP7/AQAAAAAAAgABAAMAAQAAAAAAAQAAAAQAAQAAAAAAAQACAAQAAQAAAAAAAQABAAUAAQAAAAAAAQD//wYAAQAAAAAAAgAEAAYAAQAAAAAAAgAEAP7/AQAAAAAAAgABAAQAAQAAAAAAAwD6//7/AQAAAAAAAQD7//7/AQAAAAAAAQD8//7/AQAAAAAAAQD8//3/AQAAAAAAAgD7//3/AQAAAAAAAgD6//3/AQAAAAAAAgD8//z/AQAAAAAAAgD7//z/AQAAAAAAAgD6//z/AQAAAAAAAgABAPv/AQAAAAAAAgABAPr/AQAAAAAAAgABAPn/AQAAAAAAAgABAPj/AQAAAAAAAgABAPf/AQAAAAAAAgAAAPf/AQAAAAAAAgAAAPb/AQAAAAAAAgAAAPj/AQAAAAAAAgAAAPn/AQAAAAAAAgAAAPr/AQAAAAAAAgAAAPv/AQAAAAAAAgABAPb/AQAAAAAAAgAEAPb/AQAAAAAAAgAEAPf/AQAAAAAAAgAEAPj/AQAAAAAAAgAEAPn/AQAAAAAAAgAEAPr/AQAAAAAAAgAEAPv/AQAAAAAAAgAFAPv/AQAAAAAAAgAFAPr/AQAAAAAAAgAFAPn/AQAAAAAAAgAFAPj/AQAAAAAAAgAFAPf/AQAAAAAAAgAFAPb/AQAAAAAAAgAOAOr/AAAFAAAAAAAPAOr/AAAGAAAAAAAQAOr/AAAGAAAAAAARAOr/AAAGAAAAAAASAOr/AAAGAAAAAAATAOr/AAAHAAAAAAAQAOv/AAAGAAIAAAARAOv/AAAGAAIAAAASAOv/AAAGAAIAAAATAOv/AAAHAAIAAAAOAOv/AAAFAAIAAAAPAOv/AAAGAAIAAAASAO3/AQAAAAAAAgATAO3/AQAAAAAAAgATAO7/AQAAAAAAAgATAO//AQAAAAAAAgATAPD/AQAAAAAAAgATAPH/AQAAAAAAAgARAO3/AQAAAAAAAgASAO7/AQAAAAAAAgARAO7/AQAAAAAAAgAQAO3/AQAAAAAAAgAPAO3/AQAAAAAAAgAOAO3/AQAAAAAAAgAOAO7/AQAAAAAAAgAOAO//AQAAAAAAAgAOAPD/AQAAAAAAAgAOAPH/AQAAAAAAAgAPAPH/AQAAAAAAAgAPAPD/AQAAAAAAAgAPAO//AQAAAAAAAgAPAO7/AQAAAAAAAgAQAO7/AQAAAAAAAgAQAO//AQAAAAAAAgAQAPD/AQAAAAAAAgAQAPH/AQAAAAAAAgARAPH/AQAAAAAAAgARAPD/AQAAAAAAAgARAO//AQAAAAAAAgASAPD/AQAAAAAAAgASAPH/AQAAAAAAAgAUAPD/AQAAAAAAAgAUAO//AQAAAAAAAgAUAO7/AQAAAAAAAgAUAPH/AQAAAAAAAgAUAO3/AQAAAAAAAgATAOz/AQAAAAAAAgASAOz/AQAAAAAAAgARAOz/AQAAAAAAAgAQAOz/AQAAAAAAAgAPAOz/AQAAAAAAAgAOAOz/AQAAAAAAAgANAOz/AQAAAAAAAgAMAOz/AQAAAAAAAgAMAOv/AQAAAAAAAgANAOv/AQAAAAAAAgAMAOr/AQAAAAAAAgANAOr/AQAAAAAAAgANAOn/AQAAAAAAAgANAOj/AQAAAAAAAgAMAOj/AQAAAAAAAgAOAOj/AQAAAAAAAgAPAOj/AQAAAAAAAgAQAOj/AQAAAAAAAgARAOj/AQAAAAAAAgASAOj/AQAAAAAAAgATAOj/AQAAAAAAAgAUAOj/AQAAAAAAAgAUAOn/AQAAAAAAAgAUAOr/AQAAAAAAAgAUAOv/AQAAAAAAAgATAOn/AQAAAAAAAgASAOn/AQAAAAAAAgARAOn/AQAAAAAAAgAQAOn/AQAAAAAAAgAPAOn/AQAAAAAAAgAOAOn/AQAAAAAAAgA=")
+tile_set = ExtResource("2_12lo0")
 
 [node name="transitions" type="Node" parent="."]
 
 [node name="Level_transition" parent="transitions" instance=ExtResource("1_v3mb1")]
-position = Vector2(344, -4)
+position = Vector2(1102, 863)
 next_level = "res://scenes/levels/lvl_lighter_fan.tscn"
 spawn_id = 1
 send_id = 3
 
 [node name="Level_transition2" parent="transitions" instance=ExtResource("1_v3mb1")]
-position = Vector2(887, -9)
+position = Vector2(-1101, -2083)
 next_level = "res://scenes/levels/lvl_stapler_get.tscn"
 spawn_id = 2
 send_id = 1
+
+[node name="doors" type="Node" parent="."]
+
+[node name="door" parent="doors" instance=ExtResource("4_vvox2")]
+position = Vector2(1347, 250)
+rotation = 1.5707964
+scale = Vector2(2, 1)
+signals_needed = 2
+
+[node name="door3" parent="doors" instance=ExtResource("4_vvox2")]
+position = Vector2(1102, -3178)
+rotation = 1.5707964
+scale = Vector2(2, 1)
+index = 2
+
+[node name="door2" parent="doors" instance=ExtResource("4_vvox2")]
+position = Vector2(5268, -3185)
+rotation = 1.5707964
+scale = Vector2(2, 1)
+index = 1
+
+[node name="Gift" parent="." instance=ExtResource("5_ow3ct")]
+position = Vector2(2320, 125)
+gift_sprite = ExtResource("6_j1omb")
+tuto_sprite = ExtResource("7_dv2su")
+gift_var = 3
+
+[node name="Gift2" parent="." instance=ExtResource("5_ow3ct")]
+position = Vector2(6245, -3172)
+gift_var = 3
+
+[node name="button_floor_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("8_vvox2")]
+position = Vector2(741, -22)
+signal_reciver = NodePath("../doors/door")
+
+[node name="button_floor_block2" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("8_vvox2")]
+position = Vector2(730, -3186)
+signal_reciver = NodePath("../doors/door3")
+
+[node name="button_floor_player" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("9_ow3ct")]
+position = Vector2(736, 724)
+signal_reciver = NodePath("../doors/door")
+
+[node name="movable_fan" parent="." instance=ExtResource("10_ow3ct")]
+position = Vector2(4531, -4037)
+
+[node name="wind" parent="movable_fan/Block" index="5"]
+scale = Vector2(8.690934, -11.30176)
+
+[node name="movable_fan4" parent="." instance=ExtResource("10_ow3ct")]
+position = Vector2(3308, -3548)
+
+[node name="movable_fan2" parent="." instance=ExtResource("10_ow3ct")]
+position = Vector2(5025, -4774)
+rotation = -1.5707964
+
+[node name="movable_fan3" parent="." instance=ExtResource("10_ow3ct")]
+position = Vector2(3062, -5511)
+rotation = 1.5707964
+
+[node name="button_wall_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("11_j1omb")]
+position = Vector2(5447, -5642)
+rotation = -3.1415927
+scale = Vector2(2, 2)
+signal_reciver = NodePath("../doors/door2")
+
+[connection signal="body_entered" from="floor/VoidZone" to="floor/VoidZone/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="floor/VoidZone" to="floor/VoidZone/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/VoidZone" to="scene_placer/VoidZone/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/VoidZone" to="scene_placer/VoidZone/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129969" to="scene_placer/@Area2D@129969/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129969" to="scene_placer/@Area2D@129969/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129970" to="scene_placer/@Area2D@129970/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129970" to="scene_placer/@Area2D@129970/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129971" to="scene_placer/@Area2D@129971/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129971" to="scene_placer/@Area2D@129971/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129972" to="scene_placer/@Area2D@129972/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129972" to="scene_placer/@Area2D@129972/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129973" to="scene_placer/@Area2D@129973/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129973" to="scene_placer/@Area2D@129973/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129974" to="scene_placer/@Area2D@129974/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129974" to="scene_placer/@Area2D@129974/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129975" to="scene_placer/@Area2D@129975/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129975" to="scene_placer/@Area2D@129975/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129976" to="scene_placer/@Area2D@129976/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129976" to="scene_placer/@Area2D@129976/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129977" to="scene_placer/@Area2D@129977/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129977" to="scene_placer/@Area2D@129977/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129978" to="scene_placer/@Area2D@129978/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129978" to="scene_placer/@Area2D@129978/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129979" to="scene_placer/@Area2D@129979/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129979" to="scene_placer/@Area2D@129979/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129983" to="scene_placer/@Area2D@129983/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129983" to="scene_placer/@Area2D@129983/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129984" to="scene_placer/@Area2D@129984/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129984" to="scene_placer/@Area2D@129984/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129985" to="scene_placer/@Area2D@129985/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129985" to="scene_placer/@Area2D@129985/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129989" to="scene_placer/@Area2D@129989/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129989" to="scene_placer/@Area2D@129989/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129990" to="scene_placer/@Area2D@129990/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129990" to="scene_placer/@Area2D@129990/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129991" to="scene_placer/@Area2D@129991/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129991" to="scene_placer/@Area2D@129991/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129992" to="scene_placer/@Area2D@129992/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129992" to="scene_placer/@Area2D@129992/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129993" to="scene_placer/@Area2D@129993/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129993" to="scene_placer/@Area2D@129993/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129994" to="scene_placer/@Area2D@129994/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129994" to="scene_placer/@Area2D@129994/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129995" to="scene_placer/@Area2D@129995/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129995" to="scene_placer/@Area2D@129995/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129996" to="scene_placer/@Area2D@129996/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129996" to="scene_placer/@Area2D@129996/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129997" to="scene_placer/@Area2D@129997/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129997" to="scene_placer/@Area2D@129997/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129998" to="scene_placer/@Area2D@129998/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129998" to="scene_placer/@Area2D@129998/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@129999" to="scene_placer/@Area2D@129999/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@129999" to="scene_placer/@Area2D@129999/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130000" to="scene_placer/@Area2D@130000/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130000" to="scene_placer/@Area2D@130000/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130001" to="scene_placer/@Area2D@130001/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130001" to="scene_placer/@Area2D@130001/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130002" to="scene_placer/@Area2D@130002/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130002" to="scene_placer/@Area2D@130002/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130003" to="scene_placer/@Area2D@130003/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130003" to="scene_placer/@Area2D@130003/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130004" to="scene_placer/@Area2D@130004/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130004" to="scene_placer/@Area2D@130004/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130005" to="scene_placer/@Area2D@130005/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130005" to="scene_placer/@Area2D@130005/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130006" to="scene_placer/@Area2D@130006/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130006" to="scene_placer/@Area2D@130006/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130007" to="scene_placer/@Area2D@130007/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130007" to="scene_placer/@Area2D@130007/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130008" to="scene_placer/@Area2D@130008/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130008" to="scene_placer/@Area2D@130008/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130009" to="scene_placer/@Area2D@130009/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130009" to="scene_placer/@Area2D@130009/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130010" to="scene_placer/@Area2D@130010/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130010" to="scene_placer/@Area2D@130010/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130011" to="scene_placer/@Area2D@130011/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130011" to="scene_placer/@Area2D@130011/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130012" to="scene_placer/@Area2D@130012/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130012" to="scene_placer/@Area2D@130012/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130013" to="scene_placer/@Area2D@130013/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130013" to="scene_placer/@Area2D@130013/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130014" to="scene_placer/@Area2D@130014/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130014" to="scene_placer/@Area2D@130014/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130015" to="scene_placer/@Area2D@130015/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130015" to="scene_placer/@Area2D@130015/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130016" to="scene_placer/@Area2D@130016/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130016" to="scene_placer/@Area2D@130016/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130017" to="scene_placer/@Area2D@130017/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130017" to="scene_placer/@Area2D@130017/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@130018" to="scene_placer/@Area2D@130018/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@130018" to="scene_placer/@Area2D@130018/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132910" to="scene_placer/@Area2D@132910/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132910" to="scene_placer/@Area2D@132910/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132911" to="scene_placer/@Area2D@132911/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132911" to="scene_placer/@Area2D@132911/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132912" to="scene_placer/@Area2D@132912/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132912" to="scene_placer/@Area2D@132912/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132913" to="scene_placer/@Area2D@132913/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132913" to="scene_placer/@Area2D@132913/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132914" to="scene_placer/@Area2D@132914/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132914" to="scene_placer/@Area2D@132914/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132915" to="scene_placer/@Area2D@132915/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132915" to="scene_placer/@Area2D@132915/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132916" to="scene_placer/@Area2D@132916/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132916" to="scene_placer/@Area2D@132916/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132917" to="scene_placer/@Area2D@132917/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132917" to="scene_placer/@Area2D@132917/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132918" to="scene_placer/@Area2D@132918/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132918" to="scene_placer/@Area2D@132918/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132919" to="scene_placer/@Area2D@132919/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132919" to="scene_placer/@Area2D@132919/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132920" to="scene_placer/@Area2D@132920/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132920" to="scene_placer/@Area2D@132920/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132921" to="scene_placer/@Area2D@132921/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132921" to="scene_placer/@Area2D@132921/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132922" to="scene_placer/@Area2D@132922/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132922" to="scene_placer/@Area2D@132922/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132923" to="scene_placer/@Area2D@132923/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132923" to="scene_placer/@Area2D@132923/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132924" to="scene_placer/@Area2D@132924/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132924" to="scene_placer/@Area2D@132924/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132925" to="scene_placer/@Area2D@132925/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132925" to="scene_placer/@Area2D@132925/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132926" to="scene_placer/@Area2D@132926/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132926" to="scene_placer/@Area2D@132926/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132927" to="scene_placer/@Area2D@132927/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132927" to="scene_placer/@Area2D@132927/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132928" to="scene_placer/@Area2D@132928/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132928" to="scene_placer/@Area2D@132928/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132929" to="scene_placer/@Area2D@132929/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132929" to="scene_placer/@Area2D@132929/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132930" to="scene_placer/@Area2D@132930/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132930" to="scene_placer/@Area2D@132930/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132931" to="scene_placer/@Area2D@132931/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132931" to="scene_placer/@Area2D@132931/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132932" to="scene_placer/@Area2D@132932/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132932" to="scene_placer/@Area2D@132932/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132933" to="scene_placer/@Area2D@132933/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132933" to="scene_placer/@Area2D@132933/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132934" to="scene_placer/@Area2D@132934/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132934" to="scene_placer/@Area2D@132934/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132935" to="scene_placer/@Area2D@132935/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132935" to="scene_placer/@Area2D@132935/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132936" to="scene_placer/@Area2D@132936/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132936" to="scene_placer/@Area2D@132936/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132937" to="scene_placer/@Area2D@132937/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132937" to="scene_placer/@Area2D@132937/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132938" to="scene_placer/@Area2D@132938/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132938" to="scene_placer/@Area2D@132938/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132939" to="scene_placer/@Area2D@132939/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132939" to="scene_placer/@Area2D@132939/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132940" to="scene_placer/@Area2D@132940/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132940" to="scene_placer/@Area2D@132940/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132941" to="scene_placer/@Area2D@132941/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132941" to="scene_placer/@Area2D@132941/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132942" to="scene_placer/@Area2D@132942/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132942" to="scene_placer/@Area2D@132942/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132943" to="scene_placer/@Area2D@132943/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132943" to="scene_placer/@Area2D@132943/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132944" to="scene_placer/@Area2D@132944/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132944" to="scene_placer/@Area2D@132944/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132945" to="scene_placer/@Area2D@132945/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132945" to="scene_placer/@Area2D@132945/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132946" to="scene_placer/@Area2D@132946/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132946" to="scene_placer/@Area2D@132946/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132947" to="scene_placer/@Area2D@132947/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132947" to="scene_placer/@Area2D@132947/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132948" to="scene_placer/@Area2D@132948/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132948" to="scene_placer/@Area2D@132948/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132949" to="scene_placer/@Area2D@132949/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132949" to="scene_placer/@Area2D@132949/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132950" to="scene_placer/@Area2D@132950/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132950" to="scene_placer/@Area2D@132950/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132951" to="scene_placer/@Area2D@132951/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132951" to="scene_placer/@Area2D@132951/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132952" to="scene_placer/@Area2D@132952/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132952" to="scene_placer/@Area2D@132952/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132953" to="scene_placer/@Area2D@132953/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132953" to="scene_placer/@Area2D@132953/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132954" to="scene_placer/@Area2D@132954/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132954" to="scene_placer/@Area2D@132954/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132955" to="scene_placer/@Area2D@132955/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132955" to="scene_placer/@Area2D@132955/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132956" to="scene_placer/@Area2D@132956/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132956" to="scene_placer/@Area2D@132956/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132957" to="scene_placer/@Area2D@132957/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132957" to="scene_placer/@Area2D@132957/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132958" to="scene_placer/@Area2D@132958/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132958" to="scene_placer/@Area2D@132958/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132959" to="scene_placer/@Area2D@132959/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132959" to="scene_placer/@Area2D@132959/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132960" to="scene_placer/@Area2D@132960/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132960" to="scene_placer/@Area2D@132960/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132961" to="scene_placer/@Area2D@132961/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132961" to="scene_placer/@Area2D@132961/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132962" to="scene_placer/@Area2D@132962/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132962" to="scene_placer/@Area2D@132962/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132963" to="scene_placer/@Area2D@132963/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132963" to="scene_placer/@Area2D@132963/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132964" to="scene_placer/@Area2D@132964/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132964" to="scene_placer/@Area2D@132964/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132965" to="scene_placer/@Area2D@132965/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132965" to="scene_placer/@Area2D@132965/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132966" to="scene_placer/@Area2D@132966/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132966" to="scene_placer/@Area2D@132966/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132967" to="scene_placer/@Area2D@132967/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132967" to="scene_placer/@Area2D@132967/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132968" to="scene_placer/@Area2D@132968/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132968" to="scene_placer/@Area2D@132968/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132969" to="scene_placer/@Area2D@132969/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132969" to="scene_placer/@Area2D@132969/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132970" to="scene_placer/@Area2D@132970/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132970" to="scene_placer/@Area2D@132970/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132971" to="scene_placer/@Area2D@132971/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132971" to="scene_placer/@Area2D@132971/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132972" to="scene_placer/@Area2D@132972/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132972" to="scene_placer/@Area2D@132972/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132973" to="scene_placer/@Area2D@132973/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132973" to="scene_placer/@Area2D@132973/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="body_entered" from="scene_placer/@Area2D@132974" to="scene_placer/@Area2D@132974/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@132974" to="scene_placer/@Area2D@132974/CollisionShape2D" method="_on_void_zone_body_exited"]
+
+[editable path="movable_fan"]

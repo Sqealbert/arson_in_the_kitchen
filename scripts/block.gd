@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 			
 func fall():
 	if not $imovable_timer.time_left:
+		$AudioStreamPlayer2D.play()
 		$fall_timer.start()
 		$CollisionShape2D.set_deferred("disabled", true)
 

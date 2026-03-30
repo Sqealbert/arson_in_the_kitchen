@@ -10,6 +10,7 @@ var active = false
 
 func _on_area_entered(_area: Area2D) -> void:
 	if not active:
+		$AudioStreamPlayer2D.play()
 		signal_reciver.open_signal()
 		active = true
 		$pressed.visible = true

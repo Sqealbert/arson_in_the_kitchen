@@ -6,6 +6,7 @@ var active = false
 
 func _on_body_entered(_body: Node2D) -> void:
 	if not active:
+		$AudioStreamPlayer2D.play()
 		signal_reciver.open_signal()
 		active = true
 		$pressed.visible = true

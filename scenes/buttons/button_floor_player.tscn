@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0h0e8of1k5xc"]
+[gd_scene load_steps=6 format=3 uid="uid://d0h0e8of1k5xc"]
 
 [ext_resource type="Script" uid="uid://c85853d6drddg" path="res://scripts/button_floor_player.gd" id="1_hjbpa"]
 [ext_resource type="Texture2D" uid="uid://utr854x30c7" path="res://grapics/button_p_p.png" id="2_hjbpa"]
 [ext_resource type="Texture2D" uid="uid://dt3h6s8r2etpq" path="res://grapics/button_d_p.png" id="3_qgbmv"]
+[ext_resource type="AudioStream" uid="uid://bkdror6whqeep" path="res://Audio/Button_SFX.wav" id="4_8e8xu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6h5"]
 size = Vector2(35.020973, 34.53539)
@@ -24,6 +25,9 @@ texture = ExtResource("2_hjbpa")
 
 [node name="unpressed" type="Sprite2D" parent="."]
 texture = ExtResource("3_qgbmv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8e8xu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

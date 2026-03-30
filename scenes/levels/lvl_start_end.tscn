@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cjyws66mj6dmg"]
+[gd_scene load_steps=11 format=4 uid="uid://cjyws66mj6dmg"]
 
 [ext_resource type="TileSet" uid="uid://cuwn43hg8itwp" path="res://grapics/main_tileset.tres" id="1_cpcs3"]
 [ext_resource type="Script" uid="uid://cyyuo0u1m5jvt" path="res://scenes/levels/lvl_script.gd" id="1_omsa3"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bb8u25430albj" path="res://scenes/level_transition.tscn" id="5_6umhr"]
 [ext_resource type="PackedScene" uid="uid://cawkls2bavskj" path="res://scenes/gift.tscn" id="5_cpcs3"]
 [ext_resource type="Texture2D" uid="uid://dppd6852lsukf" path="res://grapics/Lighter.png" id="6_luc8e"]
-[ext_resource type="PackedScene" uid="uid://b2hwean7i4aif" path="res://scenes/wind.tscn" id="9_f2amb"]
+[ext_resource type="PackedScene" uid="uid://b0iu2s1a5es3q" path="res://scenes/locked_door.tscn" id="7_6umhr"]
+[ext_resource type="Texture2D" uid="uid://bnfpkhlxy4sw5" path="res://grapics/lighter_tut.png" id="7_32t0m"]
 
 [node name="LvlStartEnd" type="Node2D"]
 script = ExtResource("1_omsa3")
@@ -39,8 +40,9 @@ position = Vector2(6369, -5627)
 signal_reciver = NodePath("../doors/door3")
 
 [node name="Gift" parent="." instance=ExtResource("5_cpcs3")]
-position = Vector2(6412, -7339)
+position = Vector2(6360, -7309)
 gift_sprite = ExtResource("6_luc8e")
+tuto_sprite = ExtResource("7_32t0m")
 gift_var = 1
 
 [node name="transitions" type="Node" parent="."]
@@ -75,5 +77,8 @@ position = Vector2(6368, -5998)
 scale = Vector2(2, 1)
 index = 2
 
-[node name="wind" parent="." instance=ExtResource("9_f2amb")]
-position = Vector2(2188, 460)
+[node name="door4" parent="doors" instance=ExtResource("7_6umhr")]
+position = Vector2(-369, 491)
+rotation = -1.5707964
+scale = Vector2(2, 1)
+index = 3

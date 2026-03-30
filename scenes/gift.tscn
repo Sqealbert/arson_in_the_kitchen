@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cawkls2bavskj"]
+[gd_scene load_steps=10 format=3 uid="uid://cawkls2bavskj"]
 
 [ext_resource type="Script" uid="uid://bqok8ujbdfak8" path="res://scenes/gift.gd" id="1_2knn2"]
 [ext_resource type="Texture2D" uid="uid://dppd6852lsukf" path="res://grapics/Lighter.png" id="1_olhi4"]
-[ext_resource type="Texture2D" uid="uid://chwwdh7cd1j2v" path="res://icon.svg" id="2_2knn2"]
+[ext_resource type="Texture2D" uid="uid://r346t4i6bu1a" path="res://grapics/gift_bottom.png" id="3_lwmgm"]
+[ext_resource type="Texture2D" uid="uid://yywmh4au1phh" path="res://grapics/gift_top.png" id="4_t1seu"]
 [ext_resource type="AudioStream" uid="uid://bmyfqyb7nhrbb" path="res://Audio/Present_SFX.wav" id="4_w3fd6"]
+[ext_resource type="Texture2D" uid="uid://bnfpkhlxy4sw5" path="res://grapics/lighter_tut.png" id="5_t1seu"]
 [ext_resource type="AudioStream" uid="uid://llovyw1v7d0j" path="res://Audio/Gift.ogg" id="5_w3fd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wxtb"]
@@ -20,14 +22,19 @@ script = ExtResource("1_2knn2")
 texture = ExtResource("1_olhi4")
 
 [node name="box" type="Sprite2D" parent="."]
-position = Vector2(-3.0000014, 2.0000002)
-scale = Vector2(1.7656643, 1.7656643)
-texture = ExtResource("2_2knn2")
+position = Vector2(3, 23.999998)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_lwmgm")
 
 [node name="top" type="Sprite2D" parent="."]
-position = Vector2(-2.9999998, -90)
-scale = Vector2(1.7656643, 0.40566397)
-texture = ExtResource("2_2knn2")
+position = Vector2(0, -141.425)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_t1seu")
+
+[node name="tutorial" type="Sprite2D" parent="."]
+position = Vector2(-14, -512)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_t1seu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, -1.5)
@@ -48,11 +55,11 @@ one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_w3fd6")
-volume_db = 2.796
+volume_db = -12.301
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_w3fd6")
-volume_db = -9.505
+volume_db = -23.484
 pitch_scale = 0.9
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
