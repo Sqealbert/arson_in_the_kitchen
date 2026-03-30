@@ -1,0 +1,24 @@
+'start menu' is for the start menu/main menu, it loops
+
+'pause' is played in pause menu, it loops
+
+'puzzles' is the theme for all puzzles room, it loops
+
+'gift' plays when you pick up upgrades, doesnt loop
+
+'the legendary reward' plays for the final puzzzle, loops
+
+'a reward' plays for end of the game, doesnt loop
+
+
+box sfx plays for boxes moving
+footsteps sfx plays for arsonist moving
+key sfx plays for using key
+lighter sfx plays for lighter being used
+skateboard sfx plays for skateboard being used
+door sfx plays for door opening
+fan sfx plays for fan being used
+stapler sfx plays for stapler being used
+stapler wall sfx plays for stapler hitting a wall
+present sfx plays for gift box opening
+falling sfx plays for falling into pit
