@@ -1,0 +1,86 @@
+[gd_scene format=4 uid="uid://dawbccndor0bm"]
+
+[ext_resource type="TileSet" uid="uid://ckxnqismbkdus" path="res://main_tileset.tres" id="1_yrwun"]
+[ext_resource type="PackedScene" uid="uid://cakyfs8pxapfr" path="res://player(2).tscn" id="2_24pk4"]
+[ext_resource type="PackedScene" path="res://block.tscn" id="3_orh8i"]
+[ext_resource type="PackedScene" uid="uid://d1tdvfvwqeg60" path="res://vines.tscn" id="4_akih4"]
+[ext_resource type="PackedScene" uid="uid://d1g2lmkbiikgb" path="res://door.tscn" id="5_1gcfe"]
+[ext_resource type="PackedScene" uid="uid://d23wayk66jsbj" path="res://void_zone.tscn" id="6_d5040"]
+[ext_resource type="PackedScene" uid="uid://7hn184fh68ts" path="res://button_floor_block.tscn" id="7_gcfga"]
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=1742224697]
+tile_set = ExtResource("1_yrwun")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=180650765]
+position = Vector2(-8, 9)
+tile_map_data = PackedByteArray("AAD7//z/AAAIAAIAAAD8//z/AAAHAAEAAAD+//z/AAAHAAEAAAD///z/AAAHAAEAAAAAAPz/AAAHAAEAAAABAPz/AAAHAAEAAAACAPz/AAAEAAIAAAACAP7/AAACAAIAAAACAP//AAAGAAAAAAACAAAAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAD7//7/AAAIAAAAAAD7////AAAAAAEAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAD7/wMAAAAAAAQAAAACAAMAAAAEAAQAAAD8/wMAAAACAAQAAAD9/wMAAAACAAQAAAD+/wMAAAACAAQAAAD//wMAAAACAAQAAAAAAAMAAAACAAQAAAABAAMAAAACAAQAAAD8/wIAAAABAAMAAAABAAIAAAADAAMAAAABAP3/AAADAAEAAAD8//3/AAABAAEAAAD+//3/AAACAAEAAAD///3/AAACAAEAAAD8//7/AAABAAIAAAD8/wAAAAABAAIAAAD8/wEAAAABAAIAAAD9/wIAAAACAAMAAAD+/wIAAAACAAMAAAD//wIAAAACAAMAAAAAAAIAAAACAAMAAAABAP7/AAADAAIAAAABAP//AAADAAIAAAABAAAAAAADAAIAAAABAAEAAAADAAIAAAD+//7/AAACAAIAAAD///7/AAACAAIAAAD+////AAACAAIAAAD9/wAAAAACAAIAAAD+/wAAAAACAAIAAAD9/wEAAAACAAIAAAAAAP7/AAACAAIAAAAAAAAAAAACAAIAAAAAAAEAAAACAAIAAAD//wEAAAACAAIAAAD+/wEAAAACAAIAAAD//wAAAAACAAIAAAD/////AAACAAIAAAAAAP//AAACAAIAAAACAP3/AAAGAAIAAAADAP3/AAAIAAIAAAADAP//AAAIAAAAAAADAAAAAAAAAAQAAAAEAAAAAAACAAQAAAAFAAAAAAACAAQAAAAGAAAAAAACAAQAAAAHAAAAAAAEAAQAAAAHAP//AAAEAAIAAAAHAP7/AAAEAAIAAAAHAP3/AAAEAAIAAAAHAPz/AAAEAAAAAAADAPz/AAAAAAAAAAAEAPz/AAACAAAAAAAFAPz/AAACAAAAAAAGAPz/AAACAAAAAAADAP7/AAAHAAEAAAAEAP3/AAABAAEAAAAGAP3/AAADAAEAAAAGAP//AAADAAMAAAAEAP//AAABAAMAAAAFAP3/AAACAAEAAAAGAP7/AAADAAIAAAAFAP//AAACAAMAAAAEAP7/AAACAAIAAAAFAP7/AAACAAIAAAD7//3/AAACAAMAAAD6//3/AAACAAMAAAD5//3/AAACAAMAAAD4//3/AAACAAMAAAD4//z/AAACAAIAAAD5//z/AAADAAIAAAD6//z/AAAGAAIAAAACAPv/AAAEAAAAAAABAPv/AAADAAAAAAAAAPv/AAADAAAAAAD///v/AAADAAAAAAD+//v/AAADAAAAAAD9//v/AAADAAAAAAD8//v/AAADAAAAAAD6//7/AAACAAQAAAD5//7/AAACAAQAAAD3//7/AAACAAQAAAD4//7/AAACAAQAAAD3//3/AAABAAMAAAD3//z/AAABAAIAAAD2//7/AAAAAAQAAAD2//3/AAAAAAMAAAD2//z/AAAAAAMAAAD2//v/AAAAAAMAAAD2//r/AAAAAAMAAAD2//n/AAAAAAAAAAD3//n/AAAIAAUAAAD5//n/AAAGAAUAAAD6//n/AAAEAAAAAAD6//r/AAAEAAEAAAD6//v/AAAEAAEAAAD3//r/AAABAAEAAAD4//r/AAACAAEAAAD5//r/AAADAAEAAAD7//v/AAAAAAAAAAD4//n/AAAHAAQAAAD4//j/AAACAAIAAAD4//f/AAACAAIAAAA=")
+tile_set = ExtResource("1_yrwun")
+
+[node name="Player" parent="." unique_id=1135305018 instance=ExtResource("2_24pk4")]
+position = Vector2(-1, -15)
+push_force = null
+
+[node name="Block" parent="." unique_id=23546441 instance=ExtResource("3_orh8i")]
+position = Vector2(-372, 391)
+
+[node name="Vines2" parent="." unique_id=688291169 instance=ExtResource("4_akih4")]
+position = Vector2(-131, 397)
+
+[node name="Vines" parent="Vines2" unique_id=575745754 instance=ExtResource("4_akih4")]
+position = Vector2(-254, 243)
+
+[node name="Vines" parent="Vines2/Vines" unique_id=182615866 instance=ExtResource("4_akih4")]
+position = Vector2(-239, -244)
+
+[node name="door" parent="Vines2/Vines" unique_id=448031458 instance=ExtResource("5_1gcfe")]
+position = Vector2(871.99994, -997.00006)
+rotation = 1.535249
+scale = Vector2(2.1335397, -1.4058944)
+
+[node name="Vines" parent="." unique_id=253280165 instance=ExtResource("4_akih4")]
+position = Vector2(-365, 147)
+
+[node name="VoidZone" parent="." unique_id=1340050948 instance=ExtResource("6_d5040")]
+position = Vector2(-609, -586)
+
+[node name="VoidZone" parent="VoidZone" unique_id=833086721 instance=ExtResource("6_d5040")]
+position = Vector2(-8, 229)
+scale = Vector2(6.499922, -3.9999924)
+
+[node name="VoidZone" parent="VoidZone/VoidZone" unique_id=1925152759 instance=ExtResource("6_d5040")]
+position = Vector2(478.8971, 730.6079)
+
+[node name="VoidZone" parent="VoidZone/VoidZone/VoidZone" unique_id=527151162 instance=ExtResource("6_d5040")]
+position = Vector2(0, 5.550205)
+
+[node name="VoidZone2" parent="VoidZone/VoidZone" unique_id=846168060 instance=ExtResource("6_d5040")]
+position = Vector2(0.15384555, -59.250114)
+
+[node name="VoidZone3" parent="VoidZone/VoidZone" unique_id=1727296610 instance=ExtResource("6_d5040")]
+position = Vector2(-35.231194, -61.250114)
+
+[node name="VoidZone2" parent="." unique_id=1058913805 instance=ExtResource("6_d5040")]
+position = Vector2(-609, -867)
+
+[node name="VoidZone3" parent="." unique_id=176539136 instance=ExtResource("6_d5040")]
+position = Vector2(-2082, -1089)
+
+[node name="VoidZone4" parent="." unique_id=911249435 instance=ExtResource("6_d5040")]
+position = Vector2(-1830, -1104)
+
+[node name="VoidZone5" parent="." unique_id=603414861 instance=ExtResource("6_d5040")]
+position = Vector2(-1601, -1104)
+
+[node name="button_floor_block" parent="." unique_id=642240069 node_paths=PackedStringArray("signal_reciver") instance=ExtResource("7_gcfga")]
+position = Vector2(127.99999, -610.00006)
+scale = Vector2(0.8817153, 0.90514034)
+signal_reciver = NodePath("../Vines2/Vines/door")
+
+[node name="Vines3" parent="." unique_id=212534654 instance=ExtResource("4_akih4")]
+position = Vector2(-2082, -839)
+
+[node name="Vines4" parent="." unique_id=1849774194 instance=ExtResource("4_akih4")]
+position = Vector2(-1835, -829)
+
+[node name="Vines5" parent="." unique_id=2054598002 instance=ExtResource("4_akih4")]
+position = Vector2(-1599, -829)
