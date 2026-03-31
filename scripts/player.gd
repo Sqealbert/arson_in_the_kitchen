@@ -21,6 +21,11 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_node_ready() and not $fall_timer.time_left:
+		print(lasting_dir)
+		if lasting_dir.x < 0:
+			$animation.scale.x = -1
+		if lasting_dir.x > 0:
+			$animation.scale.x = 1
 		if not velocity.length():
 			$animation/walk.frame = 0
 		if takes_input:

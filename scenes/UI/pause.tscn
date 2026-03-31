@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bomphtocmnw2s"]
+[gd_scene load_steps=14 format=3 uid="uid://bomphtocmnw2s"]
 
 [ext_resource type="Script" uid="uid://bhqsrn5hgj5d3" path="res://scenes/UI/pause.gd" id="1_tnhvy"]
 [ext_resource type="Texture2D" uid="uid://k00m8adn12yr" path="res://grapics/IMG_1314.png" id="2_xr3kq"]
@@ -9,8 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://bsru4uw62xop8" path="res://grapics/Stapler.png" id="7_fracd"]
 [ext_resource type="Texture2D" uid="uid://b736ghmkkhhqa" path="res://grapics/IMG_1331.png" id="8_ws86r"]
 [ext_resource type="PackedScene" uid="uid://tvfgb3f1rhmr" path="res://scenes/UI/exit.tscn" id="9_0f636"]
+[ext_resource type="Texture2D" uid="uid://bnfpkhlxy4sw5" path="res://grapics/lighter_tut.png" id="9_ws86r"]
+[ext_resource type="Texture2D" uid="uid://croouh8wwk46g" path="res://grapics/fan_tut.png" id="10_td3u7"]
+[ext_resource type="Texture2D" uid="uid://qo6m8g3y84gv" path="res://grapics/dash_tut.png" id="11_ngjb8"]
+[ext_resource type="Texture2D" uid="uid://g3e88mqwo1gw" path="res://grapics/stapler_tut.png" id="12_bf7uh"]
 
 [node name="pause" type="Control"]
+z_index = 2
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_tnhvy")
@@ -104,6 +110,50 @@ offset_bottom = 3131.1387
 rotation = 3.1415927
 scale = Vector2(0.20523567, 0.20523567)
 texture = ExtResource("8_ws86r")
+
+[node name="tut1" type="TextureRect" parent="backpack"]
+visible = false
+layout_mode = 0
+offset_left = -499.24158
+offset_top = 219.54597
+offset_right = 1888.7584
+offset_bottom = 1887.546
+rotation = -0.38316983
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_ws86r")
+
+[node name="tut2" type="TextureRect" parent="backpack"]
+visible = false
+layout_mode = 0
+offset_left = -427.06213
+offset_top = 657.1342
+offset_right = 1960.9381
+offset_bottom = 2325.1343
+rotation = 0.19111423
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_td3u7")
+
+[node name="tut3" type="TextureRect" parent="backpack"]
+visible = false
+layout_mode = 0
+offset_left = 2103.7317
+offset_top = -162.40387
+offset_right = 4491.7314
+offset_bottom = 1505.5962
+rotation = 0.3640944
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_ngjb8")
+
+[node name="tut4" type="TextureRect" parent="backpack"]
+visible = false
+layout_mode = 0
+offset_left = 1965.3876
+offset_top = 726.3063
+offset_right = 4353.3877
+offset_bottom = 2394.3062
+rotation = -0.06334733
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_bf7uh")
 
 [node name="Exit" parent="." instance=ExtResource("9_0f636")]
 layout_mode = 1

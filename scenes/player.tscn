@@ -34,6 +34,7 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_g2els")
 speed = 800
+push_force = null
 
 [node name="wind_pivot" type="Marker2D" parent="."]
 scale = Vector2(5.895506, 9.03451)
