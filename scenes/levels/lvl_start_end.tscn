@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cjyws66mj6dmg"]
+[gd_scene load_steps=12 format=4 uid="uid://cjyws66mj6dmg"]
 
 [ext_resource type="TileSet" uid="uid://cuwn43hg8itwp" path="res://grapics/main_tileset.tres" id="1_cpcs3"]
 [ext_resource type="Script" uid="uid://cyyuo0u1m5jvt" path="res://scenes/levels/lvl_script.gd" id="1_omsa3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dppd6852lsukf" path="res://grapics/Lighter.png" id="6_luc8e"]
 [ext_resource type="PackedScene" uid="uid://b0iu2s1a5es3q" path="res://scenes/locked_door.tscn" id="7_6umhr"]
 [ext_resource type="Texture2D" uid="uid://bnfpkhlxy4sw5" path="res://grapics/lighter_tut.png" id="7_32t0m"]
+[ext_resource type="PackedScene" uid="uid://chpp4mkhju3c7" path="res://scenes/end_trans.tscn" id="11_32t0m"]
 
 [node name="LvlStartEnd" type="Node2D"]
 script = ExtResource("1_omsa3")
@@ -48,7 +49,9 @@ gift_var = 1
 [node name="transitions" type="Node" parent="."]
 
 [node name="Level_transition" parent="transitions" instance=ExtResource("5_6umhr")]
-position = Vector2(25, -28)
+visible = false
+position = Vector2(507, 547)
+collision_mask = 0
 next_level = "res://scenes/levels/lvl_lighter_fan.tscn"
 spawn_id = 2
 send_id = 1
@@ -82,3 +85,6 @@ position = Vector2(-369, 491)
 rotation = -1.5707964
 scale = Vector2(2, 1)
 index = 3
+
+[node name="end_transition" parent="." instance=ExtResource("11_32t0m")]
+position = Vector2(-1037, 579)

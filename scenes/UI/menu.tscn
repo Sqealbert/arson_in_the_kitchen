@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmste65lm6ed6"]
+
+[ext_resource type="Texture2D" uid="uid://d243ckio7o0x0" path="res://grapics/menus/IMG_1325/menu.PNG" id="1_2un8v"]
+[ext_resource type="Texture2D" uid="uid://bbu1lslnuxfkw" path="res://grapics/menus/IMG_1325/menup.PNG" id="2_iysyy"]
+[ext_resource type="Script" uid="uid://dxsvkwersd2rd" path="res://scenes/UI/menu.gd" id="3_2un8v"]
+
+[node name="menu" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_2un8v")
+texture_pressed = ExtResource("2_iysyy")
+texture_hover = ExtResource("2_iysyy")
+script = ExtResource("3_2un8v")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

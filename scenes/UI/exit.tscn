@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://tvfgb3f1rhmr"]
+
+[ext_resource type="Script" uid="uid://dp6i6l4plmqvu" path="res://scenes/UI/exit.gd" id="1_mux2e"]
+[ext_resource type="Texture2D" uid="uid://djfru83pb5g55" path="res://grapics/menus/IMG_1325/quitp.PNG" id="2_5q3md"]
+[ext_resource type="Texture2D" uid="uid://bwnaoug8gvuky" path="res://grapics/menus/IMG_1325/quit.PNG" id="3_bp06k"]
+
+[node name="Exit" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_bp06k")
+texture_pressed = ExtResource("2_5q3md")
+texture_hover = ExtResource("2_5q3md")
+script = ExtResource("1_mux2e")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

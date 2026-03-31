@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cokpvlxyrietm"]
+
+[ext_resource type="Texture2D" uid="uid://dyjlr0kjva614" path="res://grapics/menus/IMG_1325/start.PNG" id="1_ss188"]
+[ext_resource type="Texture2D" uid="uid://b1lf4ue040m8f" path="res://grapics/menus/IMG_1325/startp.PNG" id="2_ngq20"]
+[ext_resource type="Script" uid="uid://7y25v031386n" path="res://scenes/UI/start.gd" id="3_ss188"]
+
+[node name="start" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_ss188")
+texture_pressed = ExtResource("2_ngq20")
+texture_hover = ExtResource("2_ngq20")
+script = ExtResource("3_ss188")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

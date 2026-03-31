@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgqd3qeykc3ny"]
+
+[ext_resource type="Texture2D" uid="uid://dytnwv1j2oqdm" path="res://grapics/menus/IMG_1325/Background.PNG" id="1_5jstl"]
+[ext_resource type="PackedScene" uid="uid://cokpvlxyrietm" path="res://scenes/UI/start.tscn" id="2_tfcbk"]
+[ext_resource type="PackedScene" uid="uid://tvfgb3f1rhmr" path="res://scenes/UI/exit.tscn" id="3_e2p27"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1729.0001
+offset_top = -1075.0
+offset_right = 658.9999
+offset_bottom = 593.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9675391, 0.9675391)
+texture = ExtResource("1_5jstl")
+
+[node name="start" parent="TextureRect" instance=ExtResource("2_tfcbk")]
+layout_mode = 1
+offset_left = 899.1885
+offset_top = 883.68524
+offset_right = 899.1885
+offset_bottom = 883.6853
+
+[node name="Exit" parent="TextureRect" instance=ExtResource("3_e2p27")]
+layout_mode = 1
+offset_left = 901.2556
+offset_top = 1183.4148
+offset_right = 901.2556
+offset_bottom = 1183.415

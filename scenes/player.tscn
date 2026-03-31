@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mw5lpyf6ek3m"]
+[gd_scene load_steps=18 format=3 uid="uid://mw5lpyf6ek3m"]
 
 [ext_resource type="Script" uid="uid://bmv20qedbkcns" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="SpriteFrames" uid="uid://y3ic0861una5" path="res://grapics/player/player_walk/walk/player_legs_walk.tres" id="3_3v2ag"]
@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cxrrqqtis86ia" path="res://scenes/stapler_projectile.tscn" id="3_qhqgy"]
 [ext_resource type="SpriteFrames" uid="uid://eedk1pehjbte" path="res://grapics/player/player_top_normal.tres" id="4_jej6c"]
 [ext_resource type="SpriteFrames" uid="uid://lh4ktjdk0pvv" path="res://grapics/player/fan/afba5dc4-5b17-4400-bb6b-3ba9e0da6300-0/fan_top.tres" id="5_f1ej7"]
-[ext_resource type="PackedScene" uid="uid://bomphtocmnw2s" path="res://scenes/UI.tscn" id="5_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://bomphtocmnw2s" path="res://scenes/UI/pause.tscn" id="5_qlg0r"]
 [ext_resource type="SpriteFrames" uid="uid://cqqcwby7to3av" path="res://grapics/player/scate/4c96b81f-bf10-4c55-8ca2-5c36553707c8-0/player_scate_legs.tres" id="6_jej6c"]
 [ext_resource type="AudioStream" uid="uid://xcd72qsj7u8q" path="res://Audio/Lighter_SFX.wav" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://bn7m2kcxbqg5k" path="res://Audio/scate_fx.wav" id="7_fjrip"]
 [ext_resource type="AudioStream" uid="uid://35ffob870dm3" path="res://Audio/starple_fx (1).wav" id="8_smehm"]
 [ext_resource type="AudioStream" uid="uid://de6ki4hdvbryi" path="res://Audio/falling SFX.wav" id="9_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://ckd2k2urtwyb0" path="res://Audio/Puzzles.ogg" id="13_jej6c"]
+[ext_resource type="AudioStream" uid="uid://cgyav8645aes2" path="res://Audio/The_Legendary_Reward.ogg" id="14_f1ej7"]
 
 [sub_resource type="Curve" id="Curve_qlg0r"]
 resource_local_to_scene = true
@@ -70,7 +72,7 @@ position = Vector2(23, 23)
 scale = Vector2(1, 0.9951446)
 sprite_frames = ExtResource("3_3v2ag")
 autoplay = "default"
-frame_progress = 0.19349249
+frame_progress = 0.86823624
 
 [node name="top" type="AnimatedSprite2D" parent="animation"]
 position = Vector2(19, 19)
@@ -82,7 +84,7 @@ position = Vector2(160, 9)
 rotation = -3.1415927
 scale = Vector2(1, -1)
 sprite_frames = ExtResource("5_f1ej7")
-frame_progress = 0.552093
+frame_progress = 0.8400326
 
 [node name="scate" type="AnimatedSprite2D" parent="animation"]
 visible = false
@@ -110,7 +112,10 @@ visible = false
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="Ui" parent="." instance=ExtResource("5_qlg0r")]
+[node name="UI" type="Node2D" parent="."]
+
+[node name="pause" parent="UI" instance=ExtResource("5_qlg0r")]
+visible = false
 
 [node name="fall_timer" type="Timer" parent="."]
 wait_time = 3.5
@@ -130,6 +135,15 @@ volume_db = -7.667
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ur7pv")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jej6c")
+volume_db = -27.212
+autoplay = true
+
+[node name="epic_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_f1ej7")
+volume_db = -27.212
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="fall_timer" to="." method="_on_fall_timer_timeout"]

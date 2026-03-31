@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://k35ibo7necor"]
+
+[ext_resource type="Texture2D" uid="uid://b2ajkute2x0pv" path="res://grapics/IMG_1313.png" id="1_wctsj"]
+[ext_resource type="AudioStream" uid="uid://cd60n7ktnth2u" path="res://Audio/a_reward.mp3" id="2_yjsyi"]
+[ext_resource type="PackedScene" uid="uid://tvfgb3f1rhmr" path="res://scenes/UI/exit.tscn" id="3_82207"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1155.0
+offset_top = -959.0
+offset_right = 1233.0
+offset_bottom = 709.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.96540636, 0.96540636)
+texture = ExtResource("1_wctsj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextureRect"]
+stream = ExtResource("2_yjsyi")
+volume_db = -37.015
+autoplay = true
+
+[node name="Exit" parent="." instance=ExtResource("3_82207")]
+layout_mode = 1
+offset_left = 469.0
+offset_top = 396.0
+offset_right = 993.0
+offset_bottom = 634.0

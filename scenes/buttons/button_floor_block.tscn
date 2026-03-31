@@ -11,6 +11,7 @@ size = Vector2(35.640812, 34.845123)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rha75"]
 
 [node name="button_floor_block" type="Area2D"]
+z_index = -1
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_m51aq")
