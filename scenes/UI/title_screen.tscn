@@ -42,3 +42,35 @@ offset_left = 469.0
 offset_top = 396.0
 offset_right = 993.0
 offset_bottom = 634.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = -455.0
+offset_right = 597.0
+offset_bottom = -447.0
+text = "made by: 
+art - Oqvunicorn
+music and sfx - The Kzamqi
+code - Irek and Sqealbert"
+placeholder_text = "made by: 
+art - Oqvunicorn
+music and sfx - The Kzamqi
+code - Irek and Sqealbert"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 301.0
+offset_top = -691.0
+offset_right = 510.0
+offset_bottom = -590.0
+grow_horizontal = 0
+scale = Vector2(2.7470257, 2.7470257)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "made by: 
+art - Oqvunicorn
+music and sfx - The Kzamqi
+code - Irek and Sqealbert"

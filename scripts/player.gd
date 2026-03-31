@@ -10,6 +10,7 @@ var next_stapler_index = 0
 var dashing = false
 var transition_enter_index: int
 var takes_input = true
+var walk = false
 
 func get_input():
 	direction = Input.get_vector("walk_left","walk_right","walk_up","walk_down")
@@ -21,12 +22,11 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_node_ready() and not $fall_timer.time_left:
-		print(lasting_dir)
 		if lasting_dir.x < 0:
 			$animation.scale.x = -1
 		if lasting_dir.x > 0:
 			$animation.scale.x = 1
-		if not velocity.length():
+		if not velocity.length() and not walk:
 			$animation/walk.frame = 0
 		if takes_input:
 			get_input()
@@ -40,10 +40,12 @@ func _physics_process(_delta: float) -> void:
 			
 			
 			move_and_slide()
+			walk = false
 			for i in get_slide_collision_count():
 				var c = get_slide_collision(i)
+
 				if c.get_collider() is RigidBody2D:
-					print(-c.get_normal() * push_force)
+					walk = true
 					c.get_collider().apply_central_force(-c.get_normal() * push_force)
 			
 			# stapler
@@ -108,6 +110,7 @@ func fall():
 		$AudioStreamPlayer2D.play()
 		$fall_timer.start()
 		$CollisionShape2D.set_deferred("disabled", true)
+		$feet_coll/CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_dash_timer_timeout() -> void:

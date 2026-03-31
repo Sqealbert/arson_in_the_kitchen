@@ -25,10 +25,10 @@ tile_set = ExtResource("1_pavnd")
 position = Vector2(9, -1422)
 gift_sprite = ExtResource("4_5nbjk")
 tuto_sprite = ExtResource("5_485ni")
-gift_var = 2
+gift_var = 4
 
 [node name="button_wall_block" parent="." node_paths=PackedStringArray("signal_reciver") instance=ExtResource("4_485ni")]
-position = Vector2(-1202, -1723)
+position = Vector2(-1279, -1728)
 scale = Vector2(2, 2)
 signal_reciver = NodePath("../doors/door")
 
@@ -45,9 +45,12 @@ send_id = 2
 position = Vector2(-1, -2324)
 scale = Vector2(2, 1)
 
-[connection signal="body_entered" from="scene_placer/@Area2D@104347" to="scene_placer/@Area2D@104347/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="scene_placer/@Area2D@104347" to="scene_placer/@Area2D@104347/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="scene_placer/@Area2D@104348" to="scene_placer/@Area2D@104348/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="scene_placer/@Area2D@104348" to="scene_placer/@Area2D@104348/CollisionShape2D" method="_on_void_zone_body_exited"]
-[connection signal="body_entered" from="scene_placer/@Area2D@104349" to="scene_placer/@Area2D@104349/CollisionShape2D" method="_on_void_zone_body_entered"]
-[connection signal="body_exited" from="scene_placer/@Area2D@104349" to="scene_placer/@Area2D@104349/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="area_entered" from="scene_placer/VoidZone" to="scene_placer/VoidZone/CollisionShape2D" method="_on_void_zone_area_entered"]
+[connection signal="body_entered" from="scene_placer/VoidZone" to="scene_placer/VoidZone/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/VoidZone" to="scene_placer/VoidZone/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="area_entered" from="scene_placer/@Area2D@140568" to="scene_placer/@Area2D@140568/CollisionShape2D" method="_on_void_zone_area_entered"]
+[connection signal="body_entered" from="scene_placer/@Area2D@140568" to="scene_placer/@Area2D@140568/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@140568" to="scene_placer/@Area2D@140568/CollisionShape2D" method="_on_void_zone_body_exited"]
+[connection signal="area_entered" from="scene_placer/@Area2D@140569" to="scene_placer/@Area2D@140569/CollisionShape2D" method="_on_void_zone_area_entered"]
+[connection signal="body_entered" from="scene_placer/@Area2D@140569" to="scene_placer/@Area2D@140569/CollisionShape2D" method="_on_void_zone_body_entered"]
+[connection signal="body_exited" from="scene_placer/@Area2D@140569" to="scene_placer/@Area2D@140569/CollisionShape2D" method="_on_void_zone_body_exited"]

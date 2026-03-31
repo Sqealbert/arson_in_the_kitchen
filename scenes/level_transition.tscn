@@ -36,8 +36,6 @@ autostart = true
 position = Vector2(32, 57)
 scale = Vector2(1.8918439, 1.8918439)
 sprite_frames = ExtResource("4_x7oan")
-frame = 1
-frame_progress = 0.009575353
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

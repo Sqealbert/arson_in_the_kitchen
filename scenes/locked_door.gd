@@ -8,6 +8,7 @@ func silent_open():
 	is_open = true
 	$anim.frame = 10
 	$CollisionShape2D.set_deferred("disabled", true)
+	$Sprite2D.visible = false
 	
 func open():
 	if not is_open and GameState.has_key:
@@ -18,6 +19,7 @@ func open():
 		$CollisionShape2D.set_deferred("disabled", true)
 		get_parent().get_parent().save_open(index)
 		is_open = true
+		GameState.spawn_id = 2 # changes spawn point
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
