@@ -13,12 +13,12 @@ func _enter_tree() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body.name, name)
 	if body.name == "Player" and $collision_delay.is_stopped():
 		body.visible = false
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		# plat door anim
 		$AudioStreamPlayer2D.play()
+		$AnimatedSprite2D.play()
 		
 
 func _on_audio_stream_player_2d_finished() -> void:

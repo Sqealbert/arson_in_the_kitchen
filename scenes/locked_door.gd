@@ -11,6 +11,7 @@ func silent_open():
 	
 func open():
 	if not is_open and GameState.has_key:
+		$Sprite2D.visible = false
 		$anim.play('default')
 		$AudioStreamPlayer2D.play()
 		$AudioStreamPlayer2D2.play()

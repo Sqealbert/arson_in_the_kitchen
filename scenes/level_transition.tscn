@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb8u25430albj"]
+[gd_scene load_steps=8 format=3 uid="uid://bb8u25430albj"]
 
 [ext_resource type="Script" uid="uid://br1ytuk71bq6h" path="res://scripts/level_transition.gd" id="1_3xln6"]
 [ext_resource type="Texture2D" uid="uid://wusyvvruybj3" path="res://grapics/door_open/door_opening0000.png" id="2_g8ilb"]
+[ext_resource type="Shader" uid="uid://b1fd8cklwayby" path="res://scenes/level_transition.gdshader" id="2_jknpt"]
 [ext_resource type="AudioStream" uid="uid://bbrhq8nfrlv3h" path="res://Audio/Door_SFX.wav" id="3_g8ilb"]
+[ext_resource type="SpriteFrames" uid="uid://b06hmpbgybc3x" path="res://grapics/transition_close/dor/transition_open.tres" id="4_x7oan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tw7k"]
+shader = ExtResource("2_jknpt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8ilb"]
 
@@ -12,6 +17,8 @@ collision_mask = 2
 script = ExtResource("1_3xln6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5tw7k")
+scale = Vector2(0.92, 1)
 texture = ExtResource("2_g8ilb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,6 +31,13 @@ stream = ExtResource("3_g8ilb")
 [node name="collision_delay" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 57)
+scale = Vector2(1.8918439, 1.8918439)
+sprite_frames = ExtResource("4_x7oan")
+frame = 1
+frame_progress = 0.009575353
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

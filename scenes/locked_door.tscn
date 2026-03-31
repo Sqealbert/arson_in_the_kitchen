@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0iu2s1a5es3q"]
+[gd_scene load_steps=12 format=3 uid="uid://b0iu2s1a5es3q"]
 
 [ext_resource type="Script" uid="uid://bmx4lrp76nneg" path="res://scenes/locked_door.gd" id="1_3lja2"]
 [ext_resource type="Shader" uid="uid://b0t1owclpcr1n" path="res://shaders/grayen.gdshader" id="2_3lja2"]
 [ext_resource type="SpriteFrames" uid="uid://c1mnw4hmyrmjp" path="res://grapics/door_open/door_frames.tres" id="3_xwjjf"]
 [ext_resource type="AudioStream" uid="uid://bbrhq8nfrlv3h" path="res://Audio/Door_SFX.wav" id="4_h1126"]
 [ext_resource type="AudioStream" uid="uid://5n18mpvvt2r0" path="res://Audio/Key_SFX.wav" id="5_xwjjf"]
+[ext_resource type="Shader" uid="uid://r3stpcr16r47" path="res://scenes/locked_door.gdshader" id="6_h1126"]
+[ext_resource type="Texture2D" uid="uid://b736ghmkkhhqa" path="res://grapics/IMG_1331.png" id="6_xwjjf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18pbm"]
 shader = ExtResource("2_3lja2")
@@ -13,6 +15,9 @@ shader = ExtResource("2_3lja2")
 size = Vector2(38.364788, 243.99998)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1126"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1126"]
+shader = ExtResource("6_h1126")
 
 [node name="door" type="StaticBody2D"]
 script = ExtResource("1_3lja2")
@@ -41,5 +46,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(27.853298, 27.853298)
 shape = SubResource("RectangleShape2D_h1126")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h1126")
+position = Vector2(9.000002, -6)
+rotation = 3.1415927
+scale = Vector2(0.05, 0.1)
+texture = ExtResource("6_xwjjf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

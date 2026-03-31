@@ -22,6 +22,8 @@ func _physics_process(_delta: float) -> void:
 	if is_node_ready() and not $fall_timer.time_left:
 		get_input()
 		velocity = speed * direction
+		if not velocity.length():
+			$animation/walk.frame = 0
 		
 		if dashing:
 			velocity += 1 * dash_dir * lerp(0, dash_speed, $dash_timer.time_left * 5)# *5 to have an alpha of 1 - if not would end at 0.2
@@ -46,18 +48,26 @@ func _physics_process(_delta: float) -> void:
 				next_stapler_index = 0
 		# fan
 		if Input.is_action_pressed("fan") and GameState.has_fan:
+			$animation/fan.visible = true
+			$animation/fan.play()
+			$animation/top.visible = false
 			$wind_pivot/wind/AudioStreamPlayer2D.play()
 			$wind_pivot/wind.active = true
 			$wind_pivot/wind.visible = true
 			$wind_pivot/wind.dir = lasting_dir
 			$wind_pivot.look_at($wind_pivot.global_position + lasting_dir)
 		else:
+			$animation/fan.visible = false
+			$animation/top.visible = true
 			$wind_pivot/wind/AudioStreamPlayer2D.stop()
 			$wind_pivot/wind.active = false
 			$wind_pivot/wind.visible = false
 			
 		#dash
 		if Input.is_action_just_pressed("dash") and GameState.has_scate:
+			$animation/scate.visible = true
+			$animation/walk.visible = false
+			$animation/scate.play()
 			$sound_scate.play()
 			$dash_timer.start()
 			dash_dir = lasting_dir
@@ -86,6 +96,8 @@ func fall():
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
+	$animation/scate.visible = false
+	$animation/walk.visible = true
 
 
 func _on_fall_timer_timeout() -> void:

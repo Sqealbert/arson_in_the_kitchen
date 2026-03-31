@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://mw5lpyf6ek3m"]
+[gd_scene load_steps=16 format=3 uid="uid://mw5lpyf6ek3m"]
 
-[ext_resource type="Texture2D" uid="uid://84msa5uauhad" path="res://grapics/sweet_baby.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bmv20qedbkcns" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="SpriteFrames" uid="uid://y3ic0861una5" path="res://grapics/player/player_walk/walk/player_legs_walk.tres" id="3_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://b2hwean7i4aif" path="res://scenes/wind.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://cxrrqqtis86ia" path="res://scenes/stapler_projectile.tscn" id="3_qhqgy"]
+[ext_resource type="SpriteFrames" uid="uid://eedk1pehjbte" path="res://grapics/player/player_top_normal.tres" id="4_jej6c"]
+[ext_resource type="SpriteFrames" uid="uid://lh4ktjdk0pvv" path="res://grapics/player/fan/afba5dc4-5b17-4400-bb6b-3ba9e0da6300-0/fan_top.tres" id="5_f1ej7"]
 [ext_resource type="PackedScene" uid="uid://bomphtocmnw2s" path="res://scenes/UI.tscn" id="5_qlg0r"]
+[ext_resource type="SpriteFrames" uid="uid://cqqcwby7to3av" path="res://grapics/player/scate/4c96b81f-bf10-4c55-8ca2-5c36553707c8-0/player_scate_legs.tres" id="6_jej6c"]
 [ext_resource type="AudioStream" uid="uid://xcd72qsj7u8q" path="res://Audio/Lighter_SFX.wav" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://bn7m2kcxbqg5k" path="res://Audio/scate_fx.wav" id="7_fjrip"]
 [ext_resource type="AudioStream" uid="uid://35ffob870dm3" path="res://Audio/starple_fx (1).wav" id="8_smehm"]
@@ -60,9 +63,35 @@ position = Vector2(4.9999995, 13.999999)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("CapsuleShape2D_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.49999997, 0.5)
-texture = ExtResource("1_3vyb7")
+[node name="animation" type="Node2D" parent="."]
+
+[node name="walk" type="AnimatedSprite2D" parent="animation"]
+position = Vector2(23, 23)
+scale = Vector2(1, 0.9951446)
+sprite_frames = ExtResource("3_3v2ag")
+autoplay = "default"
+frame_progress = 0.19349249
+
+[node name="top" type="AnimatedSprite2D" parent="animation"]
+position = Vector2(19, 19)
+sprite_frames = ExtResource("4_jej6c")
+
+[node name="fan" type="AnimatedSprite2D" parent="animation"]
+visible = false
+position = Vector2(160, 9)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("5_f1ej7")
+frame_progress = 0.552093
+
+[node name="scate" type="AnimatedSprite2D" parent="animation"]
+visible = false
+position = Vector2(22, 10)
+rotation = -3.1415927
+scale = Vector2(1.4140284, -1.4140284)
+sprite_frames = ExtResource("6_jej6c")
+frame = 7
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.34, 0.34)
