@@ -12,6 +12,7 @@ func silent_open():
 	
 func open():
 	if not is_open and GameState.has_key:
+
 		$Sprite2D.visible = false
 		$anim.play('default')
 		$AudioStreamPlayer2D.play()
@@ -24,4 +25,5 @@ func open():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	open()
-	body.start_vibing()
+	if GameState.has_key:
+		body.start_vibing()
